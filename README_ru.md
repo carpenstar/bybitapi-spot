@@ -37,10 +37,11 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---best-bid-ask-price">Best Bid Ask Price</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/BestBidAskPrice">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/bid-ask" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/BestBidAskPrice/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/BestBidAskPrice/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/BestBidAskPrice">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/bid-ask" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
   <tr>
@@ -48,10 +49,11 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---instrument-info">Instrument Info</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/instrument" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/instrument" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
   <tr>
@@ -59,10 +61,11 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---kline">Kline</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/kline" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/kline" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
   <tr>
@@ -70,10 +73,11 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---last-traded-price">Last Traded Price</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/last-price" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/last-price" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
   <tr>
@@ -81,10 +85,11 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---merged-order-book">Merged Order Book</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/merge-depth" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/merge-depth" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
   <tr>
@@ -92,10 +97,11 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---public-trading-records">Public Trading Records</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/recent-trade" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/recent-trade" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
   <tr>
@@ -103,10 +109,11 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---tickers">Tickers</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/tickers" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/tickers" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
   <tr>
@@ -114,31 +121,31 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---order-book">Order Book</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/public/depth" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
-        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook/README.md">EN</a>,<a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook/README_ru.md">RU</a>
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/depth" target="_blank">перейти</a></td>
+    <td style="text-align: center">
+        <a href="">EN</a>,
+        <a href="">RU</a>
     </td>
   </tr>
 
   <tr>
-    <th colspan="5" style="text-align: left; font-weight: bold">TRADE</th>
+    <th colspan="4" style="text-align: left; font-weight: bold">TRADE</th>
   </tr>
   <tr>
     <th style="text-align: center; font-weight: bold">Эндпоинт</th>
     <th style="text-align: center; font-weight: bold">Тип доступа</th>
     <th style="text-align: center; font-weight: bold">Смотреть в директории</th>
     <th style="text-align: center; font-weight: bold">Официальная документации</th>
-    <th style="text-align: center; font-weight: bold">Язык</th>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#trade---place-order">Place Order</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/PlaceOrder">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/place-order" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/PlaceOrder">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/place-order" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -148,9 +155,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#trade---get-order">Get Order</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/GetOrder">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/get-order" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/GetOrder">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/get-order" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -160,9 +167,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="https://github.com/carpenstar/bybitapi-sdk-spot#trade---cancel-order">Cancel Order</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/CancelOrder">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/cancel" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/CancelOrder">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/cancel" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -172,9 +179,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Batch Cancel Order</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrder">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/batch-cancel" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrder">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/batch-cancel" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -184,9 +191,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Batch Cancel Order By Id</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrderById">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/cancel-by-id" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrderById">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/cancel-by-id" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -196,9 +203,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Open Orders</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OpenOrders">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/open-order" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OpenOrders">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/open-order" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -208,9 +215,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Order History</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OrderHistory">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/order-history" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OrderHistory">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/order-history" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -220,32 +227,31 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Trade History</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/TradeHistory">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/trade/my-trades" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/TradeHistory">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/my-trades" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
   </tr>
 
   <tr>
-    <th colspan="5" style="text-align: left; font-weight: bold">LEVERAGE TOKEN</th>
+    <th colspan="4" style="text-align: left; font-weight: bold">LEVERAGE TOKEN</th>
   </tr>
   <tr>
     <th style="text-align: center; font-weight: bold">Эндпоинт</th>
     <th style="text-align: center; font-weight: bold">Тип доступа</th>
     <th style="text-align: center; font-weight: bold">Смотреть в директории</th>
     <th style="text-align: center; font-weight: bold">Официальная документации</th>
-    <th style="text-align: center; font-weight: bold">Язык</th>
   </tr>
   <tr>
     <td>
       <a href="">All Asset Info</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/AllAssetInfo">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/etp/asset-info" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/AllAssetInfo">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/asset-info" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -255,9 +261,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Market Info</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/MarketInfo">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/etp/market-info" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/MarketInfo">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/market-info" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -267,9 +273,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Purchase</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Purchase">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/etp/purchase" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Purchase">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/purchase" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -279,9 +285,9 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Purchase Redeem History</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/PurchaseRedeemHistory">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/etp/order-history" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/PurchaseRedeemHistory">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/order-history" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -291,31 +297,30 @@ composer require carpenstar/bybitapi-sdk-spot
       <a href="">Redeem</a>
     </td>
     <td>Публичный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Redeem">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/etp/redeem" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Redeem">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/redeem" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
   </tr>
   <tr>
-    <th colspan="5" style="text-align: left; font-weight: bold">ACCOUNT</th>
+    <th colspan="4" style="text-align: left; font-weight: bold">ACCOUNT</th>
   </tr>
   <tr>
     <th style="text-align: center; font-weight: bold">Эндпоинт</th>
     <th style="text-align: center; font-weight: bold">Тип доступа</th>
     <th style="text-align: center; font-weight: bold">Смотреть в директории</th>
     <th style="text-align: center; font-weight: bold">Официальная документации</th>
-    <th style="text-align: center; font-weight: bold">Язык</th>
   </tr>
   <tr>
     <td>
       <a href="">Wallet Balance</a>
     </td>
     <td>Приватный</td>
-    <td style="text-align: center" align="center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Account/WalletBalance">смотреть</a></td>
-    <td style="text-align: center" align="center"><a href="https://bybit-exchange.github.io/docs/spot/wallet" target="_blank">смотреть</a></td>
-    <td style="text-align: center" align="center">
+    <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Account/WalletBalance">перейти</a></td>
+    <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/wallet" target="_blank">перейти</a></td>
+    <td style="text-align: center">
         <a href="">EN</a>,
         <a href="">RU</a>
     </td>
@@ -333,8 +338,6 @@ composer require carpenstar/bybitapi-sdk-spot
 // Класс эндпоинта:
 \Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\BestBidAskPrice::class
 ```
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -370,7 +373,7 @@ echo "Time: {$bestBidAskPrice->getTime()->format("Y-m-d H:i:s")}" . PHP_EOL;
  */
 ```
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<p><b>Параметры запроса:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces;
@@ -386,14 +389,7 @@ interface IBestBidAskPriceRequestInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces\IBestBidAskPriceRequestInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Response\BestBidAskPriceResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces\IBestBidAskPriceRequestInterface</b>
     </td>
   </tr>
   <tr>
@@ -408,32 +404,25 @@ interface IBestBidAskPriceRequestInterface
   </tr>
 </table>
 
-<p align="center" width="100%"><b>СТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces;
 
 interface IBestBidAskPriceResponseInterface
 {
-    public function getSymbol(): string; // Торговый инструмент
-    public function getAskPrice(): float; // Лучшая цена продажи 
-    public function getAskQty(): float; // Количество по лучшей цене продажи
-    public function getBidPrice(): float; // Лучшая цена покупки
-    public function getBidQty(): float; // Количество по лучшей цене покупки
-    public function getTime(): \DateTime; // Время ответа на запрос
+    public function getSymbol(): string;
+    public function getAskPrice(): float;
+    public function getAskQty(): float;
+    public function getBidPrice(): float;
+    public function getBidQty(): float;
+    public function getTime(): \DateTime;
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces\IBestBidAskPriceResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Response\BestBidAskPriceResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces\IBestBidAskPriceResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -442,34 +431,34 @@ interface IBestBidAskPriceResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IBestBidAskPriceResponseInterface::getSymbol()</td>
+    <td>:: getSymbol()</td>
     <td style="text-align: center">string</td>
-    <td> Торговый инструмент </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IBestBidAskPriceResponseInterface::getAskPrice()</td>
+    <td>:: getAskPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Лучшая цена продажи </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IBestBidAskPriceResponseInterface::getAskQty()</td>
+    <td>:: getAskQty()</td>
     <td style="text-align: center">float</td>
-    <td> Количество по лучшей цене продажи </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IBestBidAskPriceResponseInterface::getBidPrice()</td>
+    <td>:: getBidPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Лучшая цена покупки </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IBestBidAskPriceResponseInterface::getBidQty()</td>
+    <td>:: getBidQty()</td>
     <td style="text-align: center">float</td>
-    <td> Количество по лучшей цене покупки </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IBestBidAskPriceResponseInterface::getTime()</td>
+    <td>:: getTime()</td>
     <td style="text-align: center">DateTime</td>
-    <td> Время ответа на запрос </td>
+    <td> - </td>
   </tr>
 </table>
 
@@ -486,8 +475,6 @@ interface IBestBidAskPriceResponseInterface
 // Класс эндпоинта:
 \Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\InstrumentInfo::class
 ```
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -515,6 +502,7 @@ foreach ($instrumentInfo as $instrumentItem) {
     echo "Min Price Precision: {$instrumentItem->getMinPricePrecision()}" . PHP_EOL;
     echo "Max Trade Quantity: {$instrumentItem->getMaxTradeQty()}" . PHP_EOL;
     echo "Max Trade Amt: {$instrumentItem->getMaxTradeAmt()}" . PHP_EOL;
+    echo "Category: {$instrumentItem->getCategory()}" . PHP_EOL;
     echo "Innovation: {$instrumentItem->getInnovation()}" . PHP_EOL;
     echo "Show Status: {$instrumentItem->getShowStatus()}" . PHP_EOL;
     echo "-----" . PHP_EOL;
@@ -534,6 +522,7 @@ foreach ($instrumentInfo as $instrumentItem) {
  * Min Price Precision: 0.01
  * Max Trade Quantity: 500
  * Max Trade Amt: 1200000
+ * Category: 1
  * Innovation: 0
  * Show Status: 1
  * -----
@@ -548,6 +537,7 @@ foreach ($instrumentInfo as $instrumentItem) {
  * Min Price Precision: 0.01
  * Max Trade Quantity: 100000000
  * Max Trade Amt: 1200000
+ * Category: 1
  * Innovation: 0
  * Show Status: 1
  * -----
@@ -562,53 +552,44 @@ foreach ($instrumentInfo as $instrumentItem) {
  * Min Price Precision: 0.0001
  * Max Trade Quantity: 90909.090909
  * Max Trade Amt: 10000
+ * Category: 1
  * Innovation: 0
  * Show Status: 1
  * -----
  */
 ```
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
-
----
+<p><b>Параметры запроса:</b></p>
 
 > Эндпоинт не принимает никаких дополнительных параметров в запросе
 
----
-
-<p align="center" width="100%"><b>СТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 \Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Interfaces\IInstrumentInfoResponse::class;
 
 interface IInstrumentInfoResponse
 {
-    public function getName(): string; // Торговый инструмент
-    public function getAlias(): string; // Синоним
-    public function getBaseCoin(): string; // Базовый токен
-    public function getQuoteCoin(): string; // Валюта котировки
-    public function getBasePrecision(): float; // Десятичная точность (базовая валюта)
-    public function getQuotePrecision(): float; // Десятичная точность (котируемая валюта)
-    public function getMinTradeQty(): float; // Мин. обьем ордера (недействительно для MARKET ордеров на покупку)
-    public function getMinTradeAmt(): float; // Мин. стоимость ордера (действительно только для рыночных ордеров на покупку)
-    public function getMaxTradeQty(): float; // Макс. количество заказа (игнорируется при размещении заказа с типом заказа LIMIT_MAKER)
-    public function getMaxTradeAmt(): int; // Макс. обьем ордера (игнорируется при размещении ордера типа LIMIT_MAKER)
-    public function getMinPricePrecision(): float; // Мин. количество десятичных знаков
-    public function getShowStatus(): int; // Указывает на то, что символ открыт для торговли
-    public function getInnovation(): int; // Указывает на то, что цена этой валюты относительно волатильна
+    public function getName(): string;
+    public function getAlias(): string;
+    public function getBaseCoin(): string;
+    public function getQuoteCoin(): string;
+    public function getBasePrecision(): float;
+    public function getQuotePrecision(): float;
+    public function getMinTradeQty(): float;
+    public function getMinTradeAmt(): float;
+    public function getMaxTradeQty(): float;
+    public function getMaxTradeAmt(): int;
+    public function getMinPricePrecision(): float;
+    public function getCategory(): int;
+    public function getShowStatus(): int;
+    public function getInnovation(): int;
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Interfaces\IInstrumentInfoResponse\IInstrumentInfoResponse::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Interfaces\IInstrumentInfoResponse\IInstrumentInfoResponse</b>
     </td>
   </tr>
   <tr>
@@ -617,69 +598,74 @@ interface IInstrumentInfoResponse
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getName()</td>
+    <td>:: getName()</td>
     <td style="text-align: center">string</td>
-    <td> Торговый инструмент </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getAlias()</td>
+    <td>:: getAlias()</td>
     <td style="text-align: center">string</td>
-    <td> Синоним </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getBaseCoin()</td>
+    <td>:: getBaseCoin()</td>
     <td style="text-align: center">string</td>
-    <td> Базовый токен </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getQuoteCoin()</td>
+    <td>:: getQuoteCoin()</td>
     <td style="text-align: center">string</td>
-    <td> Валюта котировки </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getBasePrecision()</td>
+    <td>:: getBasePrecision()</td>
     <td style="text-align: center">float</td>
-    <td> Десятичная точность (базовая валюта) </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getQuotePrecision()</td>
+    <td>:: getQuotePrecision()</td>
     <td style="text-align: center">float</td>
-    <td> Десятичная точность (котируемая валюта) </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMinTradeQty()</td>
+    <td>:: getMinTradeQty()</td>
     <td style="text-align: center">float</td>
-    <td> Мин. обьем ордера (недействительно для MARKET ордеров на покупку) </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMinTradeAmt()</td>
+    <td>:: getMinTradeAmt()</td>
     <td style="text-align: center">float</td>
-    <td> Мин. стоимость ордера (действительно только для рыночных ордеров на покупку) </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMaxTradeQty()</td>
+    <td>:: getMaxTradeQty()</td>
     <td style="text-align: center">float</td>
-    <td> Макс. количество заказа (игнорируется при размещении заказа с типом заказа LIMIT_MAKER) </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMaxTradeAmt()</td>
+    <td>:: getMaxTradeAmt()</td>
     <td style="text-align: center">int</td>
-    <td> Макс. обьем ордера (игнорируется при размещении ордера типа LIMIT_MAKER) </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMinPricePrecision()</td>
+    <td>:: getMinPricePrecision()</td>
     <td style="text-align: center">float</td>
-    <td> Мин. количество десятичных знаков </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getShowStatus()</td>
+    <td>:: getCategory()</td>
     <td style="text-align: center">int</td>
-    <td> Указывает на то, что символ открыт для торговли </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getInnovation()</td>
+    <td>:: getShowStatus()</td>
     <td style="text-align: center">int</td>
-    <td> Указывает на то, что цена этой валюты относительно волатильна </td>
+    <td> - </td>
+  </tr>
+  <tr>
+    <td>:: getInnovation()</td>
+    <td style="text-align: center">int</td>
+    <td> - </td>
   </tr>
 </table>
 
@@ -694,14 +680,10 @@ interface IInstrumentInfoResponse
 
 > Если startTime и endTime не указаны, будут отправлены только последние свечи.
 
-
 ```php
 // Класс эндпоинта:
 \Carpenstar\ByBitAPI\Spot\MarketData\Kline\Kline::class
 ```
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
-
 ```php
 use Carpenstar\ByBitAPI\Spot\MarketData\Kline\Response\KlineResponse;
 
@@ -740,18 +722,18 @@ echo "Trading Volume: {$kline->getTradingVolume()}" . PHP_EOL;
  */
 ```
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<p><b>Параметры запроса:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces;
 
 interface IKlineRequestInterface
 {
-    public function setSymbol(string $symbol): self; // Торговый инструмент
-    public function setLimit(int $limit): self; // Лимит на количество получаемых тиков. [1, 1000]. По умолчанию: 1000
-    public function setInterval(string $interval): self; // Размер тика. Доступные значения: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12, 1d, 1w, 1M
-    public function setStartTime(int $timestamp): self; // Таймштамп ОТ которого получаем срез данных
-    public function setEndTime(int $timestamp): self; // Таймштамп ДО которого получаем срез данных
+    public function setSymbol(string $symbol): self;
+    public function setLimit(int $limit): self;
+    public function setInterval(string $interval): self;
+    public function setStartTime(int $startTime): self;
+    public function setEndTime(int $endTime): self;
     
     // .. Getters
 }
@@ -759,14 +741,7 @@ interface IKlineRequestInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IKlineRequestInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Response\KlineResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IKlineRequestInterface</b>
     </td>
   </tr>
   <tr>
@@ -775,63 +750,54 @@ interface IKlineRequestInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setSymbol(string $symbol): self</td>
+    <td>:: setSymbol(string $symbol): self</td>
     <td style="text-align: center"><b>ДА</b></td>
     <td> Торговый инструмент</td>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setInterval(string $interval): self</td>
+    <td>:: setInterval(string $interval): self</td>
     <td style="text-align: center"><b>ДА</b></td>
-    <td> 
-        Размер тика. Доступные значения: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12, 1d, 1w, 1M
-    </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setLimit(int $limit): self</td>
+    <td>:: setLimit(int $limit): self</td>
     <td style="text-align: center">НЕТ</td>
-    <td> Лимит на количество получаемых тиков. [1, 1000]. По умолчанию: 1000 </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setStartTime(int $startTime): self</td>
+    <td>:: setStartTime(int $startTime): self</td>
     <td style="text-align: center">НЕТ</td>
-    <td> Таймштамп ОТ которого получаем срез данных </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setEndTime(int $endTime): self</td>
+    <td>:: setEndTime(int $endTime): self</td>
     <td style="text-align: center">НЕТ</td>
-    <td> Таймштамп ДО которого получаем срез данных </td>
+    <td> - </td>
   </tr>
 </table>
 
 
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces;
 
 interface IKlineResponseInterface
 {
-    public function getTime(): \DateTime; // Время начала тика
-    public function getSymbol(): string; // Торговый инструмент
-    public function getAlias(): string; // Алиас
-    public function getClosePrice(): float; // Цена закрытия тика
-    public function getHighPrice(): float; // Максимальная цена тика
-    public function getLowPrice(): float; // Минимальная цена тика
-    public function getOpenPrice(): float; // Цена открытия тика
-    public function getTradingVolume(): float; // Торговый обьем
+    public function getTime(): \DateTime;
+    public function getSymbol(): string;
+    public function getAlias(): string;
+    public function getClosePrice(): float;
+    public function getHighPrice(): float;
+    public function getLowPrice(): float;
+    public function getOpenPrice(): float;
+    public function getTradingVolume(): float;
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IKlineResponseInterface</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Response\KlineResponse</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IKlineResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -840,44 +806,44 @@ interface IKlineResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getTime()</td>
+    <td>:: getTime()</td>
     <td style="text-align: center">DateTime</td>
-    <td> Время начала тика </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getSymbol()</td>
+    <td>:: getSymbol()</td>
     <td style="text-align: center">string</td>
-    <td> Торговый инструмент </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getAlias()</td>
+    <td>:: getAlias()</td>
     <td style="text-align: center">string</td>
-    <td> Алиас </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getClosePrice()</td>
+    <td>:: getClosePrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена закрытия тика </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getHighPrice()</td>
+    <td>:: getHighPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Максимальная цена тика </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getLowPrice()</td>
+    <td>:: getLowPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Минимальная цена тика </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getOpenPrice()</td>
+    <td>:: getOpenPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена открытия тика </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineResponseInterface::getTradingVolume()</td>
+    <td>:: getTradingVolume()</td>
     <td style="text-align: center">float</td>
-    <td> Торговый обьем </td>
+    <td> - </td>
   </tr>
 </table>
 
@@ -894,9 +860,6 @@ interface IKlineResponseInterface
 // Класс эндпоинта:
 \Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\LastTradedPrice::class
 ```
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
-
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Request\LastTradedPriceRequest;
@@ -924,9 +887,7 @@ echo "Price: {$lastTradePrice->getPrice()}" . PHP_EOL;
  */
 ```
 
----
-
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<p><b>Параметры запроса:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces;
@@ -941,14 +902,7 @@ interface ILastTradedPriceRequestInterface
  <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceRequestInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Request\LastTradedPriceRequest::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceRequestInterface</b>
     </td>
   </tr>
   <tr>
@@ -957,36 +911,27 @@ interface ILastTradedPriceRequestInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>ILastTradedPriceRequestInterface::setSymbol(string $symbol): self</td>
+    <td>:: setSymbol(string $symbol): self</td>
     <td style="text-align: center">НЕТ</td>
     <td>Торговый инструмент</td>
   </tr>
 </table>
 
----
-
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 \Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceResponseInterface::class
 
 interface ILastTradedPriceResponseInterface
 {
-    public function getSymbol(): string; // Торговый инструмент
-    public function getPrice(): float; // Цена последней сделки
+    public function getSymbol(): string;
+    public function getPrice(): float;
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Response\LastTradedPriceResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -995,14 +940,14 @@ interface ILastTradedPriceResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>ILastTradedPriceResponseInterface::getSymbol()</td>
+    <td>:: getSymbol()</td>
     <td style="text-align: center">string</td>
-    <td> Торговый инструмент </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ILastTradedPriceResponseInterface::getPrice()</td>
+    <td>:: getPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена последней сделки </td>
+    <td> - </td>
   </tr>
 </table>
 
@@ -1017,8 +962,6 @@ interface ILastTradedPriceResponseInterface
 // Класс эндпоинта:
 \Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\MergedOrderBook::class
 ```
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -1073,31 +1016,22 @@ echo '---' . PHP_EOL;
  */
 ```
 
----
-
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<p><b>Параметры запроса:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces;
 
 interface IMergedOrderBookRequestInterface
 {
-    public function setSymbol(string $symbol): self; // Торговый инструмент
-    public function setScale(int $scale): self; // Точность объединенной книги заказов: 1 означает 1 цифру.
-    public function setLimit(int $limit): self; // Ограничение размера данных. [1, 200]. По умолчанию: 100 (50 ask + 50 bid)
+    public function setSymbol(string $symbol): self;
+    public function setScale(int $scale): self;
+    public function setLimit(int $limit): self;
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IMergedOrderBookRequestInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Request\MergedOrderBookRequest::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IKlineRequestInterface</b>
     </td>
   </tr>
   <tr>
@@ -1106,48 +1040,39 @@ interface IMergedOrderBookRequestInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setSymbol(string $symbol)</td>
+    <td>:: setSymbol(string $symbol)</td>
     <td style="text-align: center"><b>ДА</b></td>
     <td> Торговый инструмент</td>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setScale(int $scale)</td>
+    <td>:: setScale(int $scale)</td>
     <td style="text-align: center">НЕТ</td>
-    <td> Точность объединенной книги заказов: 1 означает 1 цифру. </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IKlineRequestInterface::setLimit(int $limit)</td>
+    <td>:: setLimit(int $limit)</td>
     <td style="text-align: center">НЕТ</td>
-    <td> Ограничение размера данных. [1, 200]. По умолчанию: 100 (50 ask + 50 bid) </td>
+    <td> - </td>
   </tr>
 </table>
 
----
-
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces;
 
 interface IMergedOrderBookResponseInterface
 {
-    public function getTime(): \DateTime; //
-    public function getAsks(): EntityCollection; //
-    public function getBids(): EntityCollection; //
+    public function getTime(): \DateTime;
+    public function getAsks(): EntityCollection;
+    public function getBids(): EntityCollection;
 
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Response\MergedOrderBookResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -1156,17 +1081,17 @@ interface IMergedOrderBookResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>ILastTradedPriceResponseInterface::getTime()</td>
+    <td>:: getTime()</td>
     <td style="text-align: center">DateTime</td>
-    <td> Время исполнения запроса </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ILastTradedPriceResponseInterface::getAsks()</td>
+    <td>:: getAsks()</td>
     <td style="text-align: center">MergedOrderBookPriceItemResponse[]</td>
     <td> - </td>
   </tr>
   <tr>
-    <td>ILastTradedPriceResponseInterface::getBids()</td>
+    <td>:: getBids()</td>
     <td style="text-align: center">MergedOrderBookPriceItemResponse[]</td>
     <td> - </td>
   </tr>
@@ -1185,14 +1110,7 @@ interface IMergedOrderBookPriceResponseInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces\IMergedOrderBookPriceResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Response\MergedOrderBookPriceItemResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -1201,14 +1119,14 @@ interface IMergedOrderBookPriceResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IMergedOrderBookPriceResponseInterface::getPrice()</td>
+    <td>:: getPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IMergedOrderBookPriceResponseInterface::getQuantity()</td>
+    <td>:: getQuantity()</td>
     <td style="text-align: center">float</td>
-    <td> Количество токенов по этой цене </td>
+    <td> - </td>
   </tr>
 </table>
 
@@ -1218,8 +1136,6 @@ interface IMergedOrderBookPriceResponseInterface
 
 ### Market Data - Public Trading Records
 <b>[Официальная страница документации](https://bybit-exchange.github.io/docs/spot/public/recent-trade)</b>
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -1283,17 +1199,15 @@ foreach ($publicTradingRecordsList as $publicTradingRecord) {
  */
 ```
 
----
-
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<p><b>Параметры запроса:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces;
 
 interface IPublicTradingRecordsRequestInterface
 {
-    public function setSymbol(string $symbol): self; // Торговый инструмент
-    public function setLimit(int $limit): self; // Лимит возвращаемых записей на запрос
+    public function setSymbol(string $symbol): self;
+    public function setLimit(int $limit): self;
     
     // .. Getters
 }
@@ -1302,14 +1216,7 @@ interface IPublicTradingRecordsRequestInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces\IPublicTradingRecordsRequestInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Request\PublicTradingRecordsRequest::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces\IPublicTradingRecordsRequestInterface</b>
     </td>
   </tr>
   <tr>
@@ -1318,45 +1225,37 @@ interface IPublicTradingRecordsRequestInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IPublicTradingRecordsRequestInterface::setSymbol(string $symbol)</td>
+    <td>:: setSymbol(string $symbol)</td>
     <td style="text-align: center"><b>ДА</b></td>
-    <td>Торговый инструмент</td>
+    <td> Торговый инструмент</td>
   </tr>
   <tr>
-    <td>IPublicTradingRecordsRequestInterface::setLimit(int $limit)</td>
+    <td>:: setLimit(int $limit)</td>
     <td style="text-align: center">НЕТ</td>
-    <td>Лимит возвращаемых записей на запрос </td>
+    <td> - </td>
   </tr>
 </table>
 
----
 
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces;
 
 interface IPublicTradingRecordsResponseInterface
 {
-    public function getPrice(): float; // Цена сделки
-    public function getQuantity(): float; // Обьем сделки
-    public function getTime(): \DateTime; // Время сделки
-    public function getIsBuyerMaker(): bool; // 0：Продажа , 1：Покупка
-    public function getType(): int; // 0：обычная сделка, 1：внебиржевая сделка (OTC)
+    public function getPrice(): float;
+    public function getQuantity(): float;
+    public function getTime(): \DateTime;
+    public function getIsBuyerMaker(): bool;
+    public function getType(): int;
 }
 ```
 
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces\IPublicTradingRecordsResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Response\PublicTradingRecordsResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces\IPublicTradingRecordsResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -1365,29 +1264,29 @@ interface IPublicTradingRecordsResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IPublicTradingRecordsResponseInterface::getPrice()</td>
+    <td>:: getPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена сделки </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IPublicTradingRecordsResponseInterface::getQuantity()</td>
+    <td>:: getQuantity()</td>
     <td style="text-align: center">float</td>
-    <td> Обьем сделки </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IPublicTradingRecordsResponseInterface::getTime()</td>
+    <td>:: getTime()</td>
     <td style="text-align: center">DateTime</td>
-    <td> Время сделки </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IPublicTradingRecordsResponseInterface::getIsBuyerMaker()</td>
+    <td>:: getIsBuyerMaker()</td>
     <td style="text-align: center">bool</td>
-    <td> 0：Продажа , 1：Покупка </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IPublicTradingRecordsResponseInterface::getType()</td>
+    <td>:: getType()</td>
     <td style="text-align: center">int</td>
-    <td> 0：обычная сделка, 1：внебиржевая сделка (OTC) </td>
+    <td> - </td>
   </tr>
 </table>
 
@@ -1398,12 +1297,6 @@ interface IPublicTradingRecordsResponseInterface
 ### Market Data - Tickers
 <b>[Официальная страница документации](https://bybit-exchange.github.io/docs/spot/public/tickers)</b>
 
-```php
-// Endpoint classname
-\Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Tickers::class
-```
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -1448,16 +1341,14 @@ echo "Trading Quote Volume: {$tickersData->getTradingQuoteVolume()}" . PHP_EOL;
  */
 ```
 
----
-
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<p><b>Параметры запроса:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces;
 
 interface ITickerRequestInterface
 {
-    public function setSymbol(string $symbol): self; // Торговый инструмент
+    public function setSymbol(string $symbol): self;
     
     // .. Getters
 }
@@ -1465,14 +1356,7 @@ interface ITickerRequestInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces\ITickerRequestInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Request\TickersRequest::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces\ITickerRequestInterface</b>
     </td>
   </tr>
   <tr>
@@ -1481,43 +1365,36 @@ interface ITickerRequestInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>ITickerRequestInterface::setSymbol(string $symbol)</td>
+    <td>:: setSymbol(string $symbol)</td>
     <td style="text-align: center"><b>ДА</b></td>
     <td>Торговый инструмент</td>
   </tr>
 </table>
 
 
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces;
 
 interface ITickersResponseInterface
 {
-    public function getTime(): \DateTime; // Время исполнения запроса
-    public function getSymbol(): string; // Торговый инструмент
-    public function getBestAskPrice(): float; // Лучшая цена продажи за 24 часа
-    public function getLastTradedPrice(): float; // Цена последней сделки
-    public function getHighPrice(): float; // Максимальная цена за 24 часа
-    public function getLowPrice(): float; // Наименьшая цена за 24 часа
-    public function getOpenPrice(): float; // Цена открытия за 24 часа
-    public function getBestBidPrice(): float; // Лучшая цена покупки за 24 часа
-    public function getTradingVolume(): float; // Торговый обьем за 24 часа
-    public function getTradingQuoteVolume(): float; // Проторгованный обьем символа за 24 часа
+    public function getTime(): \DateTime;
+    public function getSymbol(): string;
+    public function getBestAskPrice(): float;
+    public function getLastTradedPrice(): float;
+    public function getHighPrice(): float;
+    public function getLowPrice(): float;
+    public function getOpenPrice(): float;
+    public function getBestBidPrice(): float;
+    public function getTradingVolume(): float;
+    public function getTradingQuoteVolume(): float;
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces\ITickersResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Response\TickersResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces\ITickersResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -1526,54 +1403,54 @@ interface ITickersResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getTime()</td>
+    <td>:: getTime()</td>
     <td style="text-align: center">DateTime</td>
-    <td> Время исполнения запроса </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getSymbol()</td>
+    <td>:: getSymbol()</td>
     <td style="text-align: center">string</td>
-    <td> Торговый инструмент </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getBestAskPrice()</td>
+    <td>:: getBestAskPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Лучшая цена продажи за 24 часа </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getLastTradedPrice()</td>
+    <td>:: getLastTradedPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена последней сделки </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getHighPrice()</td>
+    <td>:: getHighPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Максимальная цена за 24 часа </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getLowPrice()</td>
+    <td>:: getLowPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Наименьшая цена за 24 часа </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getOpenPrice()</td>
+    <td>:: getOpenPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена открытия за 24 часа </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getBestBidPrice()</td>
+    <td>:: getBestBidPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Лучшая цена покупки за 24 часа </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getTradingVolume()</td>
+    <td>:: getTradingVolume()</td>
     <td style="text-align: center">float</td>
-    <td> Торговый обьем за 24 часа </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>ITickersResponseInterface::getTradingQuoteVolume()</td>
+    <td>:: getTradingQuoteVolume()</td>
     <td style="text-align: center">float</td>
-    <td>Проторгованный обьем символа за 24 часа</td>
+    <td> - </td>
   </tr>
 </table>
 
@@ -1584,13 +1461,6 @@ interface ITickersResponseInterface
 
 ### Market Data - Order Book
 <b>[Официальная страница документации](https://bybit-exchange.github.io/docs/spot/public/depth)</b>
-
-```php
-// Endpoint classname 
-\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\OrderBook::class
-```
-
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -1641,17 +1511,16 @@ foreach ($orderBookData->getAsks()->all() as $ask) {
  */
 ```
 
----
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<p><b>Параметры запроса:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces;
 
 interface IOrderBookRequestInterface
 {
-    public function setSymbol(string $symbol): self; // Торговый инструмент
-    public function setLimit(int $limit): self; //
+    public function setSymbol(string $symbol): self;
+    public function setLimit(int $limit): self;
     
     // .. Getters
 }
@@ -1659,14 +1528,7 @@ interface IOrderBookRequestInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup><br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces\IOrderBookRequestInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup><br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Request\OrderBookRequest::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces\IOrderBookRequestInterface</b>
     </td>
   </tr>
   <tr>
@@ -1675,27 +1537,25 @@ interface IOrderBookRequestInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IOrderBookRequestInterface::setSymbol(string $symbol)</td>
+    <td>:: setSymbol(string $symbol)</td>
     <td style="text-align: center"><b>ДА</b></td>
     <td>Торговый инструмент</td>
   </tr>
   <tr>
-    <td>IOrderBookRequestInterface::setLimit(int $limit)</td>
+    <td>:: setLimit(int $limit)</td>
     <td style="text-align: center">НЕТ</td>
-    <td> Ограничение размера данных. [1, 200]. По умолчанию: 100 (50 ask + 50 bid) </td>
+    <td> - </td>
   </tr>
 </table>
 
----
-
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<p><b>Структура ответа:</b></p>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces;
 
 interface IOrderBookResponseInterface
 {
-    public function getTime(): \DateTime; // Время исполнения запроса
+    public function getTime(): \DateTime;
     public function getAsks(): EntityCollection;
     public function getBids(): EntityCollection;
 }
@@ -1703,14 +1563,7 @@ interface IOrderBookResponseInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup><br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces\IOrderBookResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup><br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Response\OrderBookResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces\IOrderBookResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -1719,17 +1572,17 @@ interface IOrderBookResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IOrderBookResponseInterface::getTime()</td>
+    <td>:: getTime()</td>
     <td style="text-align: center">DateTime</td>
     <td> - </td>
   </tr>
   <tr>
-    <td>IOrderBookResponseInterface::getAsks()</td>
+    <td>:: getAsks()</td>
     <td style="text-align: center">IOrderBookPriceResponseInterface[]</td>
     <td> - </td>
   </tr>
   <tr>
-    <td>IOrderBookResponseInterface::getBids()</td>
+    <td>:: getBids()</td>
     <td style="text-align: center">IOrderBookPriceResponseInterface[]</td>
     <td> - </td>
   </tr>
@@ -1747,14 +1600,7 @@ interface IOrderBookPriceResponseInterface
 <table style="width: 100%">
   <tr>
     <td colspan="3">
-        <sup><b>INTERFACE</b></sup><br/>
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces\IOrderBookPriceResponseInterface::class</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-        <sup><b>DTO</b></sup><br/>
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Response\OrderBookPriceItemResponse::class</b>
+      <b>\Carpenstar\ByBitAPI\Spot\MarketData\OrderBook\Interfaces\IOrderBookPriceResponseInterface</b>
     </td>
   </tr>
   <tr>
@@ -1763,19 +1609,18 @@ interface IOrderBookPriceResponseInterface
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IOrderBookPriceResponseInterface::getPrice()</td>
+    <td>:: getPrice()</td>
     <td style="text-align: center">float</td>
-    <td> Цена </td>
+    <td> - </td>
   </tr>
   <tr>
-    <td>IOrderBookPriceResponseInterface::getQuantity()</td>
+    <td>:: getQuantity()</td>
     <td style="text-align: center">float</td>
-    <td> Количество токенов по этой цене  </td>
+    <td> - </td>
   </tr>
 </table>
 
 ---
-
 
 <br />
 
