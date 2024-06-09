@@ -16,7 +16,7 @@ class CancelOrder extends PrivateEndpoint implements IPostEndpointInterface
         return "/spot/v3/private/cancel-order";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return CancelOrderResponse::class;
     }

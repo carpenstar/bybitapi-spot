@@ -41,6 +41,7 @@ class MergedOrderBookRequest extends AbstractParameters implements IMergedOrderB
     }
 
     /**
+     * Name of the trading pair
      * @param string $symbol
      * @return MergedOrderBookRequest
      */
@@ -59,6 +60,7 @@ class MergedOrderBookRequest extends AbstractParameters implements IMergedOrderB
     }
 
     /**
+     * Precision of the merged orderbook, 1 means 1 digit
      * @param int $scale
      * @return MergedOrderBookRequest
      */
@@ -77,6 +79,7 @@ class MergedOrderBookRequest extends AbstractParameters implements IMergedOrderB
     }
 
     /**
+     * Limit for data size. [1, 200]. Default: 100
      * @param int $limit
      * @return MergedOrderBookRequest
      */

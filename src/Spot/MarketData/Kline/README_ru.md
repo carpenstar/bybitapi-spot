@@ -11,47 +11,98 @@
 \Carpenstar\ByBitAPI\Spot\MarketData\Kline\Kline::class
 ```
 
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПРИМЕР</b></h3>
+
+---
 
 ```php
+use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Spot\MarketData\Kline\Response\KlineResponse;
+use Carpenstar\ByBitAPI\Spot\MarketData\Kline;
 
-$bybit = new BybitAPI('https://api-testnet.bybit.com',"apiKey", "secret");
-
-$options = (new KlineRequest())
-    ->setSymbol("ATOMUSDT")
-    ->setInterval(EnumIntervals::MINUTE1)
-    ->setLimit(3);
-
-/** @var KlineResponse $kline */
-$kline = $bybit->rest(Kline::class, $options)->getBody()->fetch();
+$bybitApiData = (new BybitAPI())
+    ->setCredentials('https://api-testnet.bybit.com','apiKey', 'apiSecret')
+    ->publicEndpoint(Kline::class, (new KlineRequest())->setSymbol("ATOMUSDT")->setInterval(EnumIntervals::MINUTE1)->setLimit(5))
+    ->execute();
 
 
-
-echo "Time: {$kline->getTime()->format('Y-m-d H:i:s')}" . PHP_EOL;
-echo "Symbol: {$kline->getSymbol()}" . PHP_EOL;
-echo "Alias: {$kline->getAlias()}" . PHP_EOL;
-echo "Close Price: {$kline->getClosePrice()}" . PHP_EOL;
-echo "High Price: {$kline->getHighPrice()}" . PHP_EOL;
-echo "Low Price: {$kline->getLowPrice()}" . PHP_EOL;
-echo "Open Price: {$kline->getOpenPrice()}" . PHP_EOL;
-echo "Trading Volume: {$kline->getTradingVolume()}" . PHP_EOL;
+echo "Return code: {$bybitApiData->getReturnCode()} \n";
+echo "Return message: {$bybitApiData->getReturnMessage()} \n";
 
 /**
- * Result:
- *
- * Time: 2023-05-09 18:30:00
- * Symbol: ATOMUSDT
- * Alias: ATOMUSDT
- * Close Price: 702.8
- * High Price: 702.85
- * Low Price: 702.65
- * Open Price: 702.65
- * Trading Volume: 0.03
- */
+* @var KlineResponseItem[] $listKline
+*/
+$listKline = $bybitApiData->getResult()->getKlineList();
+foreach ($listKline as $kline) {
+    echo " ----- \n";
+    echo "  Time: {$kline->getTime()->format('Y-m-d H:i:s')} \n";
+    echo "  Symbol: {$kline->getSymbol()} \n";
+    echo "  Alias: {$kline->getAlias()} \n";
+    echo "  Close Price: {$kline->getClosePrice()} \n";
+    echo "  High Price: {$kline->getHighPrice()} \n";
+    echo "  Low Price: {$kline->getLowPrice()} \n";
+    echo "  Open Price: {$kline->getOpenPrice()} \n";
+    echo "  Trading Volume: {$kline->getTradingVolume()} \n";
+}
+
+/**
+* Return code: 0
+* Return message: OK
+* -----
+*   Time: 2024-06-16 17:09:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:10:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:11:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:12:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:13:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+*/
 ```
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces;
@@ -114,8 +165,11 @@ interface IKlineRequestInterface
   </tr>
 </table>
 
+<br />
 
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<h3 align="left" width="100%"><b>CТРУКТУРА ОТВЕТА</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces;

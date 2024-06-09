@@ -1,16 +1,11 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Tests;
 
-use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\ResponseHandlerBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\RestBuilder;
+use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Core\Enums\EnumOrderType;
-use Carpenstar\ByBitAPI\Core\Enums\EnumOutputMode;
 use Carpenstar\ByBitAPI\Core\Enums\EnumSide;
-use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
-use Carpenstar\ByBitAPI\Core\Response\CurlResponseDto;
-use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
-use Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Overrides\TestPlaceOrder;
+use Carpenstar\ByBitAPI\Core\Exceptions\SDKException;
+use Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\PlaceOrder;
 use Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Request\PlaceOrderRequest;
 use Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Response\PlaceOrderResponse;
 use PHPUnit\Framework\TestCase;
@@ -19,84 +14,109 @@ class PlaceOrderTest extends TestCase
 {
     static private string $placeOrderResponse = '{"retCode":0,"retMsg":"OK","result":{"orderId":"1477137337600322304","orderLinkId":"64c7ef2bdf040","symbol":"BTCUSDT","createTime":"1690824492584","orderPrice":"1000","orderQty":"0.001","orderType":"LIMIT","side":"BUY","status":"NEW","timeInForce":"GTC","accountId":"1111837","execQty":"0","orderCategory":0,"smpType":"None"},"retExtInfo":{},"time":1690824492593}';
 
-    public function testPlaceOrderDTOBuilder()
+    /**
+     * Тестирование размещения ордера по рынку на покупку
+     * @return void
+     * @throws SDKException
+     */
+    public function testPlaceBuyMarketOrderEndpoint()
     {
-        $dto = ResponseDtoBuilder::make(PlaceOrderResponse::class, json_decode(self::$placeOrderResponse, true)['result']);
-        $this->assertInstanceOf(PlaceOrderResponse::class, $dto);
-        $this->assertIsInt($dto->getOrderId());
-        $this->assertIsString($dto->getOrderLinkId());
-        $this->assertIsString($dto->getSymbol());
-        $this->assertInstanceOf(\DateTime::class, $dto->getCreateTime());
-
-        $this->assertIsFloat($dto->getOrderPrice());
-        $this->assertNotEmpty($dto->getOrderPrice());
-
-        $this->assertIsFloat($dto->getOrderQty());
-        $this->assertNotEmpty($dto->getOrderQty());
-
-        $this->assertIsString($dto->getSide());
-        $this->assertNotEmpty($dto->getSide());
-
-        $this->assertIsString($dto->getStatus());
-        $this->assertNotEmpty($dto->getStatus());
-
-        $this->assertIsString($dto->getTimeInForce());
-        $this->assertNotEmpty($dto->getTimeInForce());
-
-        $this->assertIsString($dto->getAccountId());
-        $this->assertNotEmpty($dto->getAccountId());
-
-        $this->assertIsInt($dto->getOrderCategory());
-    }
-
-    public function testPlaceOrderResponseHandlerBuilder()
-    {
-        $handler = ResponseHandlerBuilder::make(self::$placeOrderResponse, CurlResponseHandler::class, PlaceOrderResponse::class);
-        $this->assertInstanceOf(EntityCollection::class, $handler->getBody());
-        $this->assertGreaterThan(0, $handler->getBody()->count());
-    }
-
-    public function testPlaceOrderEndpoint()
-    {
-        $endpoint = RestBuilder::make(TestPlaceOrder::class, (new PlaceOrderRequest())
-            ->setSymbol("BTCUSDT")
-            ->setOrderQty(0.001)
+        $params = (new PlaceOrderRequest())
             ->setSide(EnumSide::BUY)
             ->setOrderType(EnumOrderType::MARKET)
-        );
+            ->setSymbol("ETHUSDT")
+            ->setOrderQty(3500); // Если покупка по рынку, то это свойство эквивалент USDT
 
-        $entityResponse = $endpoint->execute(EnumOutputMode::MODE_ENTITY, self::$placeOrderResponse);
-        $this->assertInstanceOf(CurlResponseDto::class, $entityResponse);
-        $body = $entityResponse->getBody();
-        $this->assertInstanceOf(EntityCollection::class, $body);
 
-        foreach ($body->fetch() as $order) {
-            $dto = ResponseDtoBuilder::make(PlaceOrderResponse::class, $order);
-            $this->assertInstanceOf(PlaceOrderResponse::class, $dto);
-            $this->assertIsInt($dto->getOrderId());
-            $this->assertIsString($dto->getOrderLinkId());
-            $this->assertIsString($dto->getSymbol());
-            $this->assertInstanceOf(\DateTime::class, $dto->getCreateTime());
+        $bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com', 'fL02oi5qo8i2jDxlum', 'Ne1EE35XTprIWrId9vGEAc1ZYJTmodA4qFzZ')
+            ->privateEndpoint(PlaceOrder::class, $params)
+            ->execute();
 
-            $this->assertIsFloat($dto->getOrderPrice());
-            $this->assertNotEmpty($dto->getOrderPrice());
+        /** @var PlaceOrderResponse $orderInfo */
+        $orderInfo = $bybit->getResult();
 
-            $this->assertIsFloat($dto->getOrderQty());
-            $this->assertNotEmpty($dto->getOrderQty());
+        $this->assertNotEmpty($orderInfo->getOrderId());
+        $this->assertNotEmpty($orderInfo->getOrderLinkId());
+        $this->assertEquals('ETHUSDT', $orderInfo->getSymbol());
+        $this->assertInstanceOf(\DateTime::class, $orderInfo->getCreateTime());
+        $this->assertTrue($orderInfo->getOrderPrice() == 0);
+        $this->assertTrue($orderInfo->getOrderQty() == 3500);
+        $this->assertEquals(strtoupper(EnumOrderType::MARKET), $orderInfo->getOrderType());
+        $this->assertEquals(strtoupper(EnumSide::BUY), $orderInfo->getSide());
+        $this->assertEquals('NEW', $orderInfo->getStatus());
+        $this->assertEquals('GTC', $orderInfo->getTimeInForce());
+        $this->assertNotEmpty($orderInfo->getAccountId());
+        $this->assertEmpty($orderInfo->getTriggerPrice());
+   }
 
-            $this->assertIsString($dto->getSide());
-            $this->assertNotEmpty($dto->getSide());
+    /**
+     * Тестирование размещения лимитного ордера на покупку
+     * @return void
+     * @throws SDKException
+     */
+    public function testPlaceBuyLimitOrderEndpoint()
+    {
+        $params = (new PlaceOrderRequest())
+            ->setSide(EnumSide::BUY)
+            ->setOrderType(EnumOrderType::LIMIT)
+            ->setOrderPrice(3000)
+            ->setSymbol("ETHUSDT")
+            ->setOrderQty(1);
 
-            $this->assertIsString($dto->getStatus());
-            $this->assertNotEmpty($dto->getStatus());
 
-            $this->assertIsString($dto->getTimeInForce());
-            $this->assertNotEmpty($dto->getTimeInForce());
+        $bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com', 'fL02oi5qo8i2jDxlum', 'Ne1EE35XTprIWrId9vGEAc1ZYJTmodA4qFzZ')
+            ->privateEndpoint(PlaceOrder::class, $params)
+            ->execute();
 
-            $this->assertIsString($dto->getAccountId());
-            $this->assertNotEmpty($dto->getAccountId());
+        /** @var PlaceOrderResponse $orderInfo */
+        $orderInfo = $bybit->getResult();
 
-            $this->assertIsInt($dto->getOrderCategory());
-        }
+        $this->assertNotEmpty($orderInfo->getOrderId());
+        $this->assertNotEmpty($orderInfo->getOrderLinkId());
+        $this->assertEquals('ETHUSDT', $orderInfo->getSymbol());
+        $this->assertInstanceOf(\DateTime::class, $orderInfo->getCreateTime());
+        $this->assertTrue($orderInfo->getOrderPrice() == 3000);
+        $this->assertTrue($orderInfo->getOrderQty() == 1);
+        $this->assertEquals(strtoupper(EnumOrderType::LIMIT), $orderInfo->getOrderType());
+        $this->assertEquals(strtoupper(EnumSide::BUY), $orderInfo->getSide());
+        $this->assertEquals('NEW', $orderInfo->getStatus());
+        $this->assertEquals('GTC', $orderInfo->getTimeInForce());
+        $this->assertNotEmpty($orderInfo->getAccountId());
+        $this->assertEmpty($orderInfo->getTriggerPrice());
+    }
+
+    /**
+     * Тестирование размещения рыночного ордера на покупку
+     * @return void
+     * @throws SDKException
+     */
+    public function testPlaceSellMarketOrderEndpoint()
+    {
+        $params = (new PlaceOrderRequest())
+            ->setSide(EnumSide::SELL)
+            ->setOrderType(EnumOrderType::MARKET)
+            ->setSymbol("ETHUSDT")
+            ->setOrderQty(1); // При продаже по рынку, это свойство отвечает за количество токенов
+
+
+        $bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com', 'fL02oi5qo8i2jDxlum', 'Ne1EE35XTprIWrId9vGEAc1ZYJTmodA4qFzZ')
+            ->privateEndpoint(PlaceOrder::class, $params)
+            ->execute();
+
+        /** @var PlaceOrderResponse $orderInfo */
+        $orderInfo = $bybit->getResult();
+
+        $this->assertNotEmpty($orderInfo->getOrderId());
+        $this->assertNotEmpty($orderInfo->getOrderLinkId());
+        $this->assertEquals('ETHUSDT', $orderInfo->getSymbol());
+        $this->assertInstanceOf(\DateTime::class, $orderInfo->getCreateTime());
+        $this->assertTrue($orderInfo->getOrderPrice() == 0);
+        $this->assertTrue($orderInfo->getOrderQty() == 1);
+        $this->assertEquals(strtoupper(EnumOrderType::MARKET), $orderInfo->getOrderType());
+        $this->assertEquals(strtoupper(EnumSide::SELL), $orderInfo->getSide());
+        $this->assertEquals('NEW', $orderInfo->getStatus());
+        $this->assertEquals('GTC', $orderInfo->getTimeInForce());
+        $this->assertNotEmpty($orderInfo->getAccountId());
+        $this->assertEmpty($orderInfo->getTriggerPrice());
     }
 }

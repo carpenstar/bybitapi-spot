@@ -13,7 +13,7 @@ class AllAssetInfo extends PublicEndpoint implements IGetEndpointInterface
         return "/spot/v3/public/infos";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return AllAssetInfoResponse::class;
     }

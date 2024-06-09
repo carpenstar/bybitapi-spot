@@ -11,60 +11,143 @@
 \Carpenstar\ByBitAPI\Spot\MarketData\Kline\Kline::class
 ```
 
-<p align="center" width="100%"><b>EXAMPLE</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>EXAMPLE</b></h3>
+
+---
 
 ```php
+use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Spot\MarketData\Kline\Response\KlineResponse;
+use Carpenstar\ByBitAPI\Spot\MarketData\Kline;
 
-$bybit = new BybitAPI('https://api-testnet.bybit.com',"apiKey", "secret");
-
-$options = (new KlineRequest())
-    ->setSymbol("ATOMUSDT")
-    ->setInterval(EnumIntervals::MINUTE1)
-    ->setLimit(3);
-
-/** @var KlineResponse $kline */
-$kline = $bybit->rest(Kline::class, $options)->getBody()->fetch();
+$bybitApiData = (new BybitAPI())
+    ->setCredentials('https://api-testnet.bybit.com','apiKey', 'apiSecret')
+    ->publicEndpoint(Kline::class, (new KlineRequest())->setSymbol("ATOMUSDT")->setInterval(EnumIntervals::MINUTE1)->setLimit(5))
+    ->execute();
 
 
-
-echo "Time: {$kline->getTime()->format('Y-m-d H:i:s')}" . PHP_EOL;
-echo "Symbol: {$kline->getSymbol()}" . PHP_EOL;
-echo "Alias: {$kline->getAlias()}" . PHP_EOL;
-echo "Close Price: {$kline->getClosePrice()}" . PHP_EOL;
-echo "High Price: {$kline->getHighPrice()}" . PHP_EOL;
-echo "Low Price: {$kline->getLowPrice()}" . PHP_EOL;
-echo "Open Price: {$kline->getOpenPrice()}" . PHP_EOL;
-echo "Trading Volume: {$kline->getTradingVolume()}" . PHP_EOL;
+echo "Return code: {$bybitApiData->getReturnCode()} \n";
+echo "Return message: {$bybitApiData->getReturnMessage()} \n";
 
 /**
- * Result:
- *
- * Time: 2023-05-09 18:30:00
- * Symbol: ATOMUSDT
- * Alias: ATOMUSDT
- * Close Price: 702.8
- * High Price: 702.85
- * Low Price: 702.65
- * Open Price: 702.65
- * Trading Volume: 0.03
- */
+* @var KlineResponseItem[] $listKline
+*/
+$listKline = $bybitApiData->getResult()->getKlineList();
+foreach ($listKline as $kline) {
+    echo " ----- \n";
+    echo "  Time: {$kline->getTime()->format('Y-m-d H:i:s')} \n";
+    echo "  Symbol: {$kline->getSymbol()} \n";
+    echo "  Alias: {$kline->getAlias()} \n";
+    echo "  Close Price: {$kline->getClosePrice()} \n";
+    echo "  High Price: {$kline->getHighPrice()} \n";
+    echo "  Low Price: {$kline->getLowPrice()} \n";
+    echo "  Open Price: {$kline->getOpenPrice()} \n";
+    echo "  Trading Volume: {$kline->getTradingVolume()} \n";
+}
+
+/**
+* Return code: 0
+* Return message: OK
+* -----
+*   Time: 2024-06-16 17:09:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:10:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:11:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:12:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+* -----
+*   Time: 2024-06-16 17:13:00
+*   Symbol: ATOMUSDT
+*   Alias: ATOMUSDT
+*   Close Price: 110
+*   High Price: 110
+*   Low Price: 110
+*   Open Price: 110
+*   Trading Volume: 0
+*/
 ```
 
-<p align="center" width="100%"><b>REQUEST PARAMETERS</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>REQUEST PARAMETERS</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces;
 
 interface IKlineRequestInterface
 {
-     public function setSymbol(string $symbol): self; // Trading instrument
-     public function setLimit(int $limit): self; // Limit on the number of ticks received. [1, 1000]. Default: 1000
-     public function setInterval(string $interval): self; // Tick size. Available values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12, 1d, 1w, 1M
-     public function setStartTime(int $timestamp): self; // Timestamp from which we get the data slice
-     public function setEndTime(int $timestamp): self; // Timestamp BEFORE which we get the data slice
-    
-     // .. Getters
+    /**
+     * Name of the trading pair
+     * @param string $symbol
+     * @return self
+     */
+    public function setSymbol(string $symbol): self;
+    public function getSymbol(): string;
+
+    /**
+     * Limit for data size. [1, 1000]. Default: 1000
+     * @param int $limit
+     * @return self
+     */
+    public function setLimit(int $limit): self;
+    public function getLimit(): int;
+
+    /**
+     * Chart interval
+     * @param string $interval
+     * @return self
+     */
+    public function setInterval(string $interval): self;
+    public function getInterval(): string;
+
+    /**
+     * Start time, eq: Y-m-d H:i:s
+     * @param int $startTime
+     * @return self
+     */
+    public function setStartTime(int $startTime): self;
+    public function getStartTime(): int;
+
+    /**
+     * End time, eq: H:i:s
+     * @param int $endTime
+     * @return self
+     */
+    public function setEndTime(int $endTime): self;
+    public function getEndTime(): int;
 }
 ```
 
@@ -115,21 +198,64 @@ interface IKlineRequestInterface
    </tr>
 </table>
 
-<p align="center" width="100%"><b>RESPONSE STRUCTURE</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>RESPONSE STRUCTURE</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces;
 
-interface IKlineResponseInterface
+interface IKlineResponseItemInterface
 {
-     public function getTime(): \DateTime; // Tick start time
-     public function getSymbol(): string; // Trading instrument
-     public function getAlias(): string; // Alias
-     public function getClosePrice(): float; // Tick closing price
-     public function getHighPrice(): float; // Maximum tick price
-     public function getLowPrice(): float; // Minimum tick price
-     public function getOpenPrice(): float; // Tick opening price
-     public function getTradingVolume(): float; // Trading volume
+    /**
+     * Timestamp
+     * @return \DateTime
+     */
+    public function getTime(): \DateTime;
+
+    /**
+     * Name of the trading pair
+     * @return string
+     */
+    public function getSymbol(): string;
+
+    /**
+     * Alias
+     * @return string
+     */
+    public function getAlias(): string;
+
+    /**
+     * Close price
+     * @return float
+     */
+    public function getClosePrice(): float;
+
+    /**
+     * High price
+     * @return float
+     */
+    public function getHighPrice(): float;
+
+    /**
+     * Low price
+     * @return float
+     */
+    public function getLowPrice(): float;
+
+    /**
+     * Open price
+     * @return float
+     */
+    public function getOpenPrice(): float;
+
+    /**
+     * Trading volume
+     * @return float
+     */
+    public function getTradingVolume(): float;
 }
 ```
 
@@ -137,13 +263,13 @@ interface IKlineResponseInterface
    <tr>
      <td colspan="3">
          <sup><b>INTERFACE</b></sup> <br />
-         <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IKlineResponseInterface::class</b>
+         <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces\IKlineResponseItemInterface::class</b>
      </td>
    </tr>
    <tr>
      <td colspan="3">
          <sup><b>DTO</b></sup> <br />
-         <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Response\KlineResponse::class</b>
+         <b>\Carpenstar\ByBitAPI\Spot\MarketData\Kline\Response\KlineResponseItem::class</b>
      </td>
    </tr>
    <tr>
@@ -152,42 +278,42 @@ interface IKlineResponseInterface
      <th style="width: 50%; text-align: center">Description</th>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getTime()</td>
+     <td>IKlineResponseItemInterface::getTime()</td>
      <td style="text-align: center">DateTime</td>
      <td> Tick start time </td>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getSymbol()</td>
+     <td>IKlineResponseItemInterface::getSymbol()</td>
      <td style="text-align: center">string</td>
      <td> Trading instrument </td>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getAlias()</td>
+     <td>IKlineResponseItemInterface::getAlias()</td>
      <td style="text-align: center">string</td>
      <td> Alias </td>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getClosePrice()</td>
+     <td>IKlineResponseItemInterface::getClosePrice()</td>
      <td style="text-align: center">float</td>
      <td> Tick closing price </td>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getHighPrice()</td>
+     <td>IKlineResponseItemInterface::getHighPrice()</td>
      <td style="text-align: center">float</td>
      <td> Maximum tick price </td>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getLowPrice()</td>
+     <td>IKlineResponseItemInterface::getLowPrice()</td>
      <td style="text-align: center">float</td>
      <td> Minimum tick price </td>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getOpenPrice()</td>
+     <td>IKlineResponseItemInterface::getOpenPrice()</td>
      <td style="text-align: center">float</td>
      <td> Tick opening price </td>
    </tr>
    <tr>
-     <td>IKlineResponseInterface::getTradingVolume()</td>
+     <td>IKlineResponseItemInterface::getTradingVolume()</td>
      <td style="text-align: center">float</td>
      <td> Trading volume </td>
    </tr>

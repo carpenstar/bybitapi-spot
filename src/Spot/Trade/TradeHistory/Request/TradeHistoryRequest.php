@@ -3,6 +3,7 @@ namespace Carpenstar\ByBitAPI\Spot\Trade\TradeHistory\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
 use Carpenstar\ByBitAPI\Spot\Trade\TradeHistory\Interfaces\ITradeHistoryRequestInterface;
+use Carpenstar\ByBitAPI\Spot\Trade\TradeHistory\Interfaces\ITradeHistoryResponseItemInterface;
 
 /**
  * Notice: If startTime is not specified, you can only query for records in the last 7 days.

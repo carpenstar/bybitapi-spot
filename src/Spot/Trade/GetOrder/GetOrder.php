@@ -16,7 +16,7 @@ class GetOrder extends PrivateEndpoint implements IGetEndpointInterface
         return "/spot/v3/private/order";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return GetOrderResponse::class;
     }

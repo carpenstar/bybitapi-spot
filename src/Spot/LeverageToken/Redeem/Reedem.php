@@ -13,7 +13,7 @@ class Reedem extends PrivateEndpoint implements IPostEndpointInterface
         return "/spot/v3/private/redeem";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return ReedemResponse::class;
     }

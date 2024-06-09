@@ -16,13 +16,13 @@ class WalletBalance extends PrivateEndpoint implements IGetEndpointInterface
         return "/spot/v3/private/account";
     }
 
-    protected function getResponseClassname(): string
-    {
-        return WalletBalanceResponse::class;
-    }
-
     protected function getRequestClassname(): string
     {
         return StubQueryBag::class;
+    }
+
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
+    {
+        return WalletBalanceResponse::class;
     }
 }

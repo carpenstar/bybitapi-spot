@@ -15,53 +15,32 @@ use PHPUnit\Framework\TestCase;
 
 class TickersTest extends TestCase
 {
-    private static string $tickersApiResponse = '{"retCode":0,"retMsg":"OK","result":{"t":1683986136017,"s":"BTCUSDT","bp":"26799.99","ap":"26810.3","lp":"26810.3","o":"26875.03","h":"28073.41","l":"25992.06","v":"2389.959483","qv":"65100545.90244497"},"retExtInfo":{},"time":1683986136450}';
-
-    public function testTickersDTOBuilder()
+    /**
+     * Тестирование сборки объекта ответа
+     *
+     * @return void
+     */
+    public function testBuildResponseData()
     {
-        $dto = ResponseDtoBuilder::make(TickersResponse::class, json_decode(self::$tickersApiResponse, true)['result']);
-        $this->assertInstanceOf(TickersResponse::class, $dto);
-        $this->assertInstanceOf(\DateTime::class, $dto->getTime());
-        $this->assertIsFloat($dto->getHighPrice());
-        $this->assertIsFloat($dto->getTradingVolume());
-        $this->assertIsFloat($dto->getOpenPrice());
-        $this->assertIsFloat($dto->getLowPrice());
-        $this->assertIsFloat($dto->getBestAskPrice());
-        $this->assertIsFloat($dto->getBestBidPrice());
-        $this->assertIsFloat($dto->getLastTradedPrice());
-        $this->assertIsFloat($dto->getTradingQuoteVolume());
-        $this->assertIsString($dto->getSymbol());
-    }
+        $json = '{"retCode":0,"retMsg":"OK","result":{"t":1683986136017,"s":"BTCUSDT","bp":"26799.99","ap":"26810.3","lp":"26810.3","o":"26875.03","h":"28073.41","l":"25992.06","v":"2389.959483","qv":"65100545.90244497"},"retExtInfo":{},"time":1683986136450}';
+        $data = (new CurlResponseHandler())->build(json_decode($json, true), TickersResponse::class);
 
-    public function testTickersResponseHandlerBuilder()
-    {
-        $handler = ResponseHandlerBuilder::make(self::$tickersApiResponse, CurlResponseHandler::class, TickersResponse::class);
-        $this->assertInstanceOf(EntityCollection::class, $handler->getBody());
-        $this->assertGreaterThan(0, $handler->getBody()->count());
-    }
+        $this->assertEquals(0, $data->getReturnCode());
+        $this->assertEquals('OK', $data->getReturnMessage());
+        $this->assertInstanceOf(TickersResponse::class, $data->getResult());
 
-    public function testTickersEndpoint()
-    {
-        $endpoint = RestBuilder::make(TestTickers::class, (new TickersRequest())
-            ->setSymbol("BTCUSDT"));
+        /** @var TickersResponse $tickerInfo */
+        $tickerInfo = $data->getResult();
 
-        $entityResponse = $endpoint->execute(EnumOutputMode::MODE_ENTITY, self::$tickersApiResponse);
-        $this->assertInstanceOf(CurlResponseDto::class, $entityResponse);
-        $body = $entityResponse->getBody();
-        $this->assertInstanceOf(EntityCollection::class, $body);
-
-        $body = $body->fetch();
-
-        $this->assertInstanceOf(TickersResponse::class, $body);
-        $this->assertInstanceOf(\DateTime::class, $body->getTime());
-        $this->assertIsFloat($body->getHighPrice());
-        $this->assertIsFloat($body->getTradingVolume());
-        $this->assertIsFloat($body->getOpenPrice());
-        $this->assertIsFloat($body->getLowPrice());
-        $this->assertIsFloat($body->getBestAskPrice());
-        $this->assertIsFloat($body->getBestBidPrice());
-        $this->assertIsFloat($body->getLastTradedPrice());
-        $this->assertIsFloat($body->getTradingQuoteVolume());
-        $this->assertIsString($body->getSymbol());
+        $this->assertInstanceOf(\DateTime::class, $tickerInfo->getTime());
+        $this->assertEquals('BTCUSDT', $tickerInfo->getSymbol());
+        $this->assertEquals(26810.3, $tickerInfo->getLastTradedPrice());
+        $this->assertEquals(28073.41, $tickerInfo->getHighPrice());
+        $this->assertEquals(25992.06, $tickerInfo->getLowPrice());
+        $this->assertEquals(26875.03, $tickerInfo->getOpenPrice());
+        $this->assertEquals(26799.99, $tickerInfo->getBestBidPrice());
+        $this->assertEquals(26810.3, $tickerInfo->getBestAskPrice());
+        $this->assertEquals(2389.959483, $tickerInfo->getTradingVolume());
+        $this->assertEquals(65100545.90244497, $tickerInfo->getTradingQuoteVolume());
     }
 }

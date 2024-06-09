@@ -8,22 +8,26 @@
 \Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\InstrumentInfo::class
 ```
 
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПРИМЕР ВЫЗОВА</b></h3>
+
+---
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\InstrumentInfo;
-use Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponse;
+use Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponseItem;
 
 $bybit = new BybitAPI('https://api-testnet.bybit.com',"apiKey", "secret");
 
-/** @var InstrumentInfoResponse[] $instrumentInfoData */
+/** @var InstrumentInfoResponseItem[] $instrumentInfoData */
 $instrumentInfo = $bybit->rest(InstrumentInfo::class)->getBody()->all();
 $instrumentInfo = array_slice($instrumentInfo, 0, 2);
 
 
 
-/** @var InstrumentInfoResponse $instrumentItem */
+/** @var InstrumentInfoResponseItem $instrumentItem */
 foreach ($instrumentInfo as $instrumentItem) {
     echo "Name: {$instrumentItem->getName()}" . PHP_EOL;
     echo "Alias: {$instrumentItem->getAlias()}" . PHP_EOL;
@@ -89,47 +93,121 @@ foreach ($instrumentInfo as $instrumentItem) {
  */
 ```
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></h3>
 
 ---
 
 > Эндпоинт не принимает никаких дополнительных параметров в запросе
 
+<br />
+
+<h3 align="left" width="100%"><b>СТРУКТУРА ОТВЕТА</b></h3>
+
 ---
 
-<p align="center" width="100%"><b>СТРУКТУРА ОТВЕТА</b></p>
-
 ```php
-\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Interfaces\IInstrumentInfoResponse::class;
+namespace Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Interfaces;
 
-interface IInstrumentInfoResponse
+interface IInstrumentInfoResponseItemInterface
 {
-    public function getName(): string; // Торговый инструмент
-    public function getAlias(): string; // Синоним
-    public function getBaseCoin(): string; // Базовый токен
-    public function getQuoteCoin(): string; // Валюта котировки
-    public function getBasePrecision(): float; // Десятичная точность (базовая валюта)
-    public function getQuotePrecision(): float; // Десятичная точность (котируемая валюта)
-    public function getMinTradeQty(): float; // Мин. обьем ордера (недействительно для MARKET ордеров на покупку)
-    public function getMinTradeAmt(): float; // Мин. стоимость ордера (действительно только для рыночных ордеров на покупку)
-    public function getMaxTradeQty(): float; // Макс. количество заказа (игнорируется при размещении заказа с типом заказа LIMIT_MAKER)
-    public function getMaxTradeAmt(): int; // Макс. обьем ордера (игнорируется при размещении ордера типа LIMIT_MAKER)
-    public function getMinPricePrecision(): float; // Мин. количество десятичных знаков
-    public function getShowStatus(): int; // Указывает на то, что символ открыт для торговли
-    public function getInnovation(): int; // Указывает на то, что цена этой валюты относительно волатильна
+    /**
+     * Name of the trading pair
+     * @return string
+     */
+    public function getName(): string;
+
+    /**
+     * Alias
+     * @return string
+     */
+    public function getAlias(): string;
+
+    /**
+     * Base currency
+     * @return string
+     */
+    public function getBaseCoin(): string;
+
+    /**
+     * Quote currency
+     * @return string
+     */
+    public function getQuoteCoin(): string;
+
+    /**
+     * Decimal precision (base currency)
+     * @return float
+     */
+    public function getBasePrecision(): float;
+
+    /**
+     * Decimal precision (quote currency)
+     * @return float
+     */
+    public function getQuotePrecision(): float;
+
+    /**
+     * Min. order qty (Not valid for market buy orders)
+     * @return float
+     */
+    public function getMinTradeQty(): float;
+
+    /**
+     * Min. order value (Only valid for market buy orders)
+     * @return float
+     */
+    public function getMinTradeAmt(): float;
+
+    /**
+     * Max. order qty (It is ignored when you place an order with order type LIMIT_MAKER)
+     * @return float
+     */
+    public function getMaxTradeQty(): float;
+
+    /**
+     * Max. order value (It is ignored when you place an order with order type LIMIT_MAKER)
+     * @return int
+     */
+    public function getMaxTradeAmt(): int;
+
+    /**
+     * Min. number of decimal places
+     * @return float
+     */
+    public function getMinPricePrecision(): float;
+
+    /**
+     * Category
+     * @return int
+     */
+    public function getCategory(): int;
+
+    /**
+     * 1 indicates that the price of this currency is relatively volatile
+     * @return int
+     */
+    public function getShowStatus(): int;
+
+    /**
+     * 1 indicates that the symbol open for trading
+     * @return int
+     */
+    public function getInnovation(): int;
 }
 ```
 <table style="width: 100%">
   <tr>
     <td colspan="3">
         <sup><b>INTERFACE</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Interfaces\IInstrumentInfoResponse\IInstrumentInfoResponse::class</b>
+        <b>\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Interfaces\IInstrumentInfoResponse\IInstrumentInfoResponseItemInterface::class</b>
     </td>
   </tr>
   <tr>
     <td colspan="3">
         <sup><b>DTO</b></sup> <br />
-        <b>\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponse::class</b>
+        <b>\Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponseItem::class</b>
     </td>
   </tr>
   <tr>
@@ -138,67 +216,67 @@ interface IInstrumentInfoResponse
     <th style="width: 50%; text-align: center">Описание</th>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getName()</td>
+    <td>IInstrumentInfoResponseItemInterface::getName()</td>
     <td style="text-align: center">string</td>
     <td> Торговый инструмент </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getAlias()</td>
+    <td>IInstrumentInfoResponseItemInterface::getAlias()</td>
     <td style="text-align: center">string</td>
     <td> Синоним </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getBaseCoin()</td>
+    <td>IInstrumentInfoResponseItemInterface::getBaseCoin()</td>
     <td style="text-align: center">string</td>
     <td> Базовый токен </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getQuoteCoin()</td>
+    <td>IInstrumentInfoResponseItemInterface::getQuoteCoin()</td>
     <td style="text-align: center">string</td>
     <td> Валюта котировки </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getBasePrecision()</td>
+    <td>IInstrumentInfoResponseItemInterface::getBasePrecision()</td>
     <td style="text-align: center">float</td>
     <td> Десятичная точность (базовая валюта) </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getQuotePrecision()</td>
+    <td>IInstrumentInfoResponseItemInterface::getQuotePrecision()</td>
     <td style="text-align: center">float</td>
     <td> Десятичная точность (котируемая валюта) </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMinTradeQty()</td>
+    <td>IInstrumentInfoResponseItemInterface::getMinTradeQty()</td>
     <td style="text-align: center">float</td>
     <td> Мин. обьем ордера (недействительно для MARKET ордеров на покупку) </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMinTradeAmt()</td>
+    <td>IInstrumentInfoResponseItemInterface::getMinTradeAmt()</td>
     <td style="text-align: center">float</td>
     <td> Мин. стоимость ордера (действительно только для рыночных ордеров на покупку) </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMaxTradeQty()</td>
+    <td>IInstrumentInfoResponseItemInterface::getMaxTradeQty()</td>
     <td style="text-align: center">float</td>
     <td> Макс. количество заказа (игнорируется при размещении заказа с типом заказа LIMIT_MAKER) </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMaxTradeAmt()</td>
+    <td>IInstrumentInfoResponseItemInterface::getMaxTradeAmt()</td>
     <td style="text-align: center">int</td>
     <td> Макс. обьем ордера (игнорируется при размещении ордера типа LIMIT_MAKER) </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getMinPricePrecision()</td>
+    <td>IInstrumentInfoResponseItemInterface::getMinPricePrecision()</td>
     <td style="text-align: center">float</td>
     <td> Мин. количество десятичных знаков </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getShowStatus()</td>
+    <td>IInstrumentInfoResponseItemInterface::getShowStatus()</td>
     <td style="text-align: center">int</td>
     <td> Указывает на то, что символ открыт для торговли </td>
   </tr>
   <tr>
-    <td>IInstrumentInfoResponse::getInnovation()</td>
+    <td>IInstrumentInfoResponseItemInterface::getInnovation()</td>
     <td style="text-align: center">int</td>
     <td> Указывает на то, что цена этой валюты относительно волатильна </td>
   </tr>

@@ -18,13 +18,13 @@ class MergedOrderBookResponse extends AbstractResponse implements IMergedOrderBo
 
     /**
      * Bid price and quantity, with best bid prices ranked from top to bottom
-     * @var EntityCollection $bids
+     * @var IMergedOrderBookResponseInterface[] $bids
      */
     protected EntityCollection $bids;
 
     /**
      * Ask price and quantity, with best ask prices ranked from top to bottom
-     * @var EntityCollection $asks
+     * @var IMergedOrderBookResponseInterface[] $asks
      */
     protected EntityCollection $asks;
 

@@ -13,7 +13,7 @@ class OpenOrders extends PrivateEndpoint implements IGetEndpointInterface
         return "/spot/v3/private/open-orders";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return OpenOrdersResponse::class;
     }

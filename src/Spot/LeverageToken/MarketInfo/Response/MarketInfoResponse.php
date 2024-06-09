@@ -45,13 +45,12 @@ class MarketInfoResponse extends AbstractResponse implements IMarketInfoResponse
 
     public function __construct(array $data)
     {
-        $this
-            ->setBasket((float) $data['basket'])
-            ->setLeverage((float) $data['leverage'])
-            ->setNav((float) $data['nav'])
-            ->setCirculation((float) $data['circulation'])
-            ->setNavTime($data['navTime'])
-            ->setLtCode($data['ltCode']);
+        $this->basket = (float) $data['basket'];
+        $this->leverage = (float) $data['leverage'];
+        $this->nav = (float) $data['nav'];
+        $this->circulation = (float) $data['circulation'];
+        $this->navTime = DateTimeHelper::makeFromTimestamp($data['navTime']);
+        $this->ltCode = $data['ltCode'];
     }
 
     /**
@@ -63,31 +62,11 @@ class MarketInfoResponse extends AbstractResponse implements IMarketInfoResponse
     }
 
     /**
-     * @param float $basket
-     * @return MarketInfoResponse
-     */
-    private function setBasket(float $basket): self
-    {
-        $this->basket = $basket;
-        return $this;
-    }
-
-    /**
      * @return float
      */
     public function getCirculation(): float
     {
         return $this->circulation;
-    }
-
-    /**
-     * @param float $circulation
-     * @return MarketInfoResponse
-     */
-    private function setCirculation(float $circulation): self
-    {
-        $this->circulation = $circulation;
-        return $this;
     }
 
     /**
@@ -99,31 +78,11 @@ class MarketInfoResponse extends AbstractResponse implements IMarketInfoResponse
     }
 
     /**
-     * @param float $leverage
-     * @return MarketInfoResponse
-     */
-    private function setLeverage(float $leverage): self
-    {
-        $this->leverage = $leverage;
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getLtCode(): string
     {
         return $this->ltCode;
-    }
-
-    /**
-     * @param string $ltCode
-     * @return MarketInfoResponse
-     */
-    private function setLtCode(string $ltCode): self
-    {
-        $this->ltCode = $ltCode;
-        return $this;
     }
 
     /**
@@ -135,32 +94,10 @@ class MarketInfoResponse extends AbstractResponse implements IMarketInfoResponse
     }
 
     /**
-     * @param float $nav
-     * @return MarketInfoResponse
-     */
-    private function setNav(float $nav): self
-    {
-        $this->nav = $nav;
-        return $this;
-    }
-
-    /**
      * @return \DateTime
      */
     public function getNavTime(): \DateTime
     {
         return $this->navTime;
     }
-
-    /**
-     * @param int $navTime
-     * @return MarketInfoResponse
-     */
-    private function setNavTime(int $navTime): self
-    {
-        $this->navTime = DateTimeHelper::makeFromTimestamp($navTime);
-        return $this;
-    }
-
-
 }

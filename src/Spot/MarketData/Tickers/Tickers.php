@@ -16,7 +16,7 @@ class Tickers extends PublicEndpoint implements IGetEndpointInterface
         return "/spot/v3/public/quote/ticker/24hr";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return TickersResponse::class;
     }

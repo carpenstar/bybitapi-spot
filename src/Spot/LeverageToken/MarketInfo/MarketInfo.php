@@ -13,7 +13,7 @@ class MarketInfo extends PublicEndpoint implements IGetEndpointInterface
         return "/spot/v3/private/reference";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return MarketInfoResponse::class;
     }

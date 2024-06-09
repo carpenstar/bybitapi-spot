@@ -4,7 +4,7 @@ namespace Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo;
 use Carpenstar\ByBitAPI\Core\Endpoints\PublicEndpoint;
 use Carpenstar\ByBitAPI\Core\Interfaces\IGetEndpointInterface;
 use Carpenstar\ByBitAPI\Core\Objects\StubQueryBag;
-use Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponse;
+use Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponseItem;
 
 /**
  * Get the spec of symbol information
@@ -18,9 +18,9 @@ class InstrumentInfo extends PublicEndpoint implements IGetEndpointInterface
         return "/spot/v3/public/symbols";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
-        return InstrumentInfoResponse::class;
+        return InstrumentInfoResponseItem::class;
     }
 
     protected function getRequestClassname(): string

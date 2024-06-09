@@ -1,7 +1,10 @@
 <?php
-namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder;
+namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\Interfaces;
 
 interface IBatchCancelOrderResponseInterface
 {
-    public function getSuccess(): bool;
+    /**
+     * Batch cancel successfully or not. 0：fail, 1：success
+     */
+    public function isSuccess(): bool;
 }

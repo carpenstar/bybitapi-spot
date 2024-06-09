@@ -16,7 +16,7 @@ class BestBidAskPrice extends PublicEndpoint implements IGetEndpointInterface
         return "/spot/v3/public/quote/ticker/bookTicker";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return BestBidAskPriceResponse::class;
     }

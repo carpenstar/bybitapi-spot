@@ -13,7 +13,7 @@ class BatchCancelOrderById extends PrivateEndpoint implements  IPostEndpointInte
         return "/spot/v3/private/cancel-orders-by-ids";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return BatchCancelOrderByIdResponse::class;
     }
