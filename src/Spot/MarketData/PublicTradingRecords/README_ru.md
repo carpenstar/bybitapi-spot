@@ -1,25 +1,24 @@
 # Market Data - Public Trading Records
 <b>[Официальная страница документации](https://bybit-exchange.github.io/docs/spot/public/recent-trade)</b>
 
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПРИМЕР ВЫЗОВА</b></h3>
+
+---
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Request\PublicTradingRecordsRequest;
 use Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\PublicTradingRecords;
-use Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Response\PublicTradingRecordsResponse;
+use Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Response\PublicTradingRecordsResponseItem;
 
-$bybit = new BybitAPI('https://api-testnet.bybit.com',"apiKey", "secret");
+$bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com', 'apiKey', 'apiSecret');
 
-$options = (new PublicTradingRecordsRequest())
-    ->setSymbol("BTCUSDT")
-    ->setLimit(5);
+$publicTradingRecordsList = $bybit->publicEndpoint(PublicTradingRecords::class, (new PublicTradingRecordsRequest())->setSymbol("BTCUSDT")->setLimit(5))
+            ->execute()->getResult()->getRecords();
 
-/** @var PublicTradingRecordsResponse[] $publicTradingRecordsList */
-$publicTradingRecordsList = $bybit->rest(PublicTradingRecords::class, $options)->getBody()->all();
-
-
-
+/** @var PublicTradingRecordsResponseItem[] $publicTradingRecordsList */
 foreach ($publicTradingRecordsList as $publicTradingRecord) {
     echo "Time: {$publicTradingRecord->getTime()->format('Y-m-d H:i:i')}" . PHP_EOL;
     echo "Price: {$publicTradingRecord->getPrice()}" . PHP_EOL;
@@ -30,44 +29,44 @@ foreach ($publicTradingRecordsList as $publicTradingRecord) {
 }
 
 /**
- * Result:
- *
- * Time: 2023-05-12 09:45:45
- * Price: 26327.59
- * Quantity: 0.00038
- * Is Buyer Maker: 1
- * Type: 0
- * -----
- * Time: 2023-05-12 09:45:45
- * Price: 26327.59
- * Quantity: 0.000342
- * Is Buyer Maker: 1
- * Type: 0
- * -----
- * Time: 2023-05-12 09:45:45
- * Price: 26327.59
- * Quantity: 0.00038
- * Is Buyer Maker: 1
- * Type: 0
- * -----
- * Time: 2023-05-12 09:45:45
- * Price: 26327.59
- * Quantity: 0.00019
- * Is Buyer Maker: 1
- * Type: 0
- * -----
- * Time: 2023-05-12 09:45:45
- * Price: 26327.59
- * Quantity: 0.00038
- * Is Buyer Maker: 1
- * Type: 0
- * -----
- */
+* Time: 2024-06-16 18:27:27
+* Price: 66572.56
+* Quantity: 0.042652
+* Is Buyer Maker:
+* Type: 0
+* -----
+* Time: 2024-06-16 18:28:28
+* Price: 66572.56
+* Quantity: 0.073579
+* Is Buyer Maker: 1
+* Type: 0
+* -----
+* Time: 2024-06-16 18:29:29
+* Price: 66572.56
+* Quantity: 0.03679
+* Is Buyer Maker:
+* Type: 0
+* -----
+* Time: 2024-06-16 18:30:30
+* Price: 66572.56
+* Quantity: 0.006563
+* Is Buyer Maker:
+* Type: 0
+* -----
+* Time: 2024-06-16 18:30:30
+* Price: 66572.56
+* Quantity: 0.006498
+* Is Buyer Maker:
+* Type: 0
+* -----
+*/
 ```
 
----
+<br />
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<h3 align="left" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces;
@@ -111,9 +110,11 @@ interface IPublicTradingRecordsRequestInterface
   </tr>
 </table>
 
----
+<br />
 
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<h3 align="left" width="100%"><b>CТРУКТУРА ОТВЕТА</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Interfaces;

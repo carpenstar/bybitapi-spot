@@ -1,49 +1,40 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Tests;
 
-use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\ResponseHandlerBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\RestBuilder;
-use Carpenstar\ByBitAPI\Core\Enums\EnumOutputMode;
-use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
-use Carpenstar\ByBitAPI\Core\Response\CurlResponseDto;
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
-use Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Overrides\TestPurchaseRedeemHistory;
-use Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Request\PurchaseRedeemHistoryRequest;
 use Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Response\PurchaseRedeemHistoryResponse;
+use Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Response\PurchaseRedeemHistoryResponseItem;
 use PHPUnit\Framework\TestCase;
 
 class PurchaseRedeemHistoryTest extends TestCase
 {
-    static private string $purchaseRedeemResponse = '{"retCode":0,"retMsg":"success","result":{"list":[{"amount":"","excTime":1662549752000,"fee":"","ltCode":"DOT3L","orderId":"2083","orderStatus":"3","orderTime":1662549752000,"orderType":1,"serialNo":"x003","value":"","valueCoin":"USDT"},{"amount":"","excTime":1662549702000,"fee":"","ltCode":"DOT3L","orderId":"2082","orderStatus":"3","orderTime":1662549702000,"orderType":1,"serialNo":"x002","value":"","valueCoin":"USDT"}]},"retExtInfo":{},"time":1662608374640}';
-
-    public function testPurchaseRedeemHistoryDTOBuilder()
+    /**
+     * Тестирование сборки объекта ответа
+     *
+     * @return void
+     */
+    public function testBuildResponseData()
     {
-        foreach (json_decode(self::$purchaseRedeemResponse, true)['result']["list"] as $item) {
-            $dto = ResponseDtoBuilder::make(PurchaseRedeemHistoryResponse::class, $item);
-            $this->assertInstanceOf(PurchaseRedeemHistoryResponse::class, $dto);
-        }
-    }
+        $json = '{"retCode":0,"retMsg":"OK","result":{"list":[{"amount":"","excTime":1662549752000,"fee":"","ltCode":"DOT3L","orderId":"2083","orderStatus":"3","orderTime":1662549752000,"orderType":1,"serialNo":"x003","value":"","valueCoin":"USDT"},{"amount":"","excTime":1662549702000,"fee":"","ltCode":"DOT3L","orderId":"2082","orderStatus":"3","orderTime":1662549702000,"orderType":1,"serialNo":"x002","value":"","valueCoin":"USDT"}]},"retExtInfo":{},"time":1662608374640}';
+        $data = (new CurlResponseHandler())->build(json_decode($json, true), PurchaseRedeemHistoryResponse::class);
 
-    public function testPurchaseRedeemHistoryResponseHandlerBuilder()
-    {
-        $handler = ResponseHandlerBuilder::make(self::$purchaseRedeemResponse, CurlResponseHandler::class, PurchaseRedeemHistoryResponse::class);
-        $this->assertInstanceOf(EntityCollection::class, $handler->getBody());
-        $this->assertGreaterThan(0, $handler->getBody()->count());
-    }
+        $this->assertEquals(0, $data->getReturnCode());
+        $this->assertEquals('OK', $data->getReturnMessage());
+        $this->assertInstanceOf(PurchaseRedeemHistoryResponse::class, $data->getResult());
 
-    public function testPurchaseRedeemHistoryEndpoint()
-    {
-        $endpoint = RestBuilder::make(TestPurchaseRedeemHistory::class, (new PurchaseRedeemHistoryRequest()));
+        /** @var PurchaseRedeemHistoryResponseItem $purchaseHistoryInfo */
+        $purchaseHistoryInfo = current($data->getResult()->getPurchaseHistory());
 
-        $entityResponse = $endpoint->execute(EnumOutputMode::MODE_ENTITY, self::$purchaseRedeemResponse);
-        $this->assertInstanceOf(CurlResponseDto::class, $entityResponse);
-        $body = $entityResponse->getBody();
-        $this->assertInstanceOf(EntityCollection::class, $body);
-
-        foreach ($body->fetch() as $item) {
-            $dto = ResponseDtoBuilder::make(PurchaseRedeemHistoryResponse::class, $item);
-            $this->assertInstanceOf(PurchaseRedeemHistoryResponse::class, $dto);
-        }
+        $this->assertInstanceOf(\DateTime::class, $purchaseHistoryInfo->getExecTime());
+        $this->assertInstanceOf(\DateTime::class, $purchaseHistoryInfo->getOrderTime());
+        $this->assertEquals(0.0, $purchaseHistoryInfo->getAmount());
+        $this->assertEquals(0.0, $purchaseHistoryInfo->getFee());
+        $this->assertEquals('DOT3L', $purchaseHistoryInfo->getLtCode());
+        $this->assertEquals(2083, $purchaseHistoryInfo->getOrderId());
+        $this->assertEquals(3, $purchaseHistoryInfo->getOrderStatus());
+        $this->assertEquals(1, $purchaseHistoryInfo->getOrderType());
+        $this->assertEquals('x003', $purchaseHistoryInfo->getSerialNo());
+        $this->assertEquals(0.0, $purchaseHistoryInfo->getValue());
+        $this->assertEquals('USDT', $purchaseHistoryInfo->getValueCoin());
     }
 }

@@ -13,7 +13,7 @@ class TradeHistory extends PrivateEndpoint implements IGetEndpointInterface
         return "/spot/v3/private/my-trades";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return TradeHistoryResponse::class;
     }

@@ -8,7 +8,11 @@
 \Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\LastTradedPrice::class
 ```
 
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПРИМЕР ВЫЗОВА</b></h3>
+
+---
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -16,30 +20,33 @@ use Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Request\LastTradedPriceR
 use Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Response\LastTradedPriceResponse;
 use Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\LastTradedPrice;
 
-$bybit = new BybitAPI('https://api-testnet.bybit.com',"apiKey", "secret");
+$lastTradePriceResponse = (new BybitAPI())
+    ->setCredentials('https://api-testnet.bybit.com', 'apiKey', 'apiSecret')
+    ->publicEndpoint(LastTradedPrice::class, (new LastTradedPriceRequest())->setSymbol("ATOMUSDT"))
+    ->execute();
 
-$options = (new LastTradedPriceRequest())
-    ->setSymbol("ATOMUSDT");
+echo "Return Code: {$lastTradePriceResponse->getReturnCode()} \n";
+echo "Return Code: {$lastTradePriceResponse->getReturnMessage()} \n";
+echo " ---  \n";
+echo "  Symbol: {$lastTradePriceResponse->getResult()->getSymbol()} \n";
+echo "  Price: {$lastTradePriceResponse->getResult()->getPrice()} \n";
 
-/** @var LastTradedPriceResponse $lastTradePrice */
-$lastTradePrice = $bybit->rest(LastTradedPrice::class, $options)->getBody()->fetch();
-
-
-
-echo "Symbol: {$lastTradePrice->getSymbol()}" . PHP_EOL;
-echo "Price: {$lastTradePrice->getPrice()}" . PHP_EOL;
 
 /**
- * Result:
  *
- * Symbol: ATOMUSDT
- * Price: 702.85
+ * Return Code: 0 
+ * Return Code: OK 
+ * ---  
+ *  Symbol: ATOMUSDT 
+ *  Price: 110
  */
 ```
 
----
+<br />
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<h3 align="left" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces;
@@ -76,9 +83,11 @@ interface ILastTradedPriceRequestInterface
   </tr>
 </table>
 
----
+<br />
 
-<p align="center" width="100%"><b>CТРУКТУРА ОТВЕТА</b></p>
+<h3 align="left" width="100%"><b>CТРУКТУРА ОТВЕТА</b></h3>
+
+---
 
 ```php
 \Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Interfaces\ILastTradedPriceResponseInterface::class

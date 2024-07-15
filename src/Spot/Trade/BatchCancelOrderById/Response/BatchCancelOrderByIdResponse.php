@@ -1,8 +1,11 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Response;
 
+use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
 use Carpenstar\ByBitAPI\Core\Objects\AbstractResponse;
+use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
 use Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Interfaces\IBatchCancelOrderByIdResponseInterface;
+use Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Interfaces\IBatchCancelOrderByIdResponseItemInterface;
 
 /**
  * Notice:  If all success, it will be empty
@@ -10,58 +13,28 @@ use Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Interfaces\IBatchCancelO
 class BatchCancelOrderByIdResponse extends AbstractResponse implements IBatchCancelOrderByIdResponseInterface
 {
 
-    /**
-     * Order ID
-     * @var int $orderId
-     */
-    private int $orderId;
-
-    /**
-     * @var string $code;
-     */
-    private string $code;
+    /** @var EntityCollection $list */
+    private EntityCollection $list;
 
     public function __construct(array $data)
     {
-        $this
-            ->setOrderId($data['orderId'])
-            ->setCode($data['code']);
+        $list = new EntityCollection();
+
+        if (!empty($data['list'])) {
+            array_map(function ($item) use ($list) {
+                $list->push(ResponseDtoBuilder::make(BatchCancelOrderByIdResponseItem::class, $item));
+            }, $data['list']);
+        }
+
+        $this->list = $list;
     }
 
     /**
-     * @param int $orderId
-     * @return BatchCancelOrderByIdResponse
+     * Object. If all success, it returns empty array
+     * @return IBatchCancelOrderByIdResponseItemInterface[]
      */
-    public function setOrderId(int $orderId): self
+    public function getErrorOrderList(): array
     {
-        $this->orderId = $orderId;
-        return $this;
+        return $this->list->all();
     }
-
-    /**
-     * @return int
-     */
-    public function getOrderId(): int
-    {
-        return $this->orderId;
-    }
-
-    /**
-     * @param string $code
-     * @return BatchCancelOrderByIdResponse
-     */
-    public function setCode(string $code): self
-    {
-        $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCode(): string
-    {
-        return $this->code;
-    }
-
 }

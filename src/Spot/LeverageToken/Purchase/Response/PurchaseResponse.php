@@ -63,16 +63,15 @@ class PurchaseResponse extends AbstractResponse implements IPurchaseResponseInte
 
     public function __construct(array $data)
     {
-        $this
-            ->setAmount((float) $data['amount'])
-            ->setId($data['id'])
-            ->setLtCode($data['ltCode'])
-            ->setOrderAmount((float) $data['orderAmount'])
-            ->setOrderQuantity((float) $data['orderQuantity'])
-            ->setOrderStatus($data['orderStatus'])
-            ->setSerialNo($data['serialNo'])
-            ->setTimestamp($data['timestamp'])
-            ->setValueCoin($data['valueCoin']);
+        $this->timestamp = DateTimeHelper::makeFromTimestamp($data['timestamp']);
+        $this->id = $data['id'];
+        $this->amount = (float) $data['amount'];
+        $this->ltCode = $data['ltCode'];
+        $this->orderAmount = (float) $data['orderAmount'];
+        $this->orderQuantity = (float) $data['orderQuantity'];
+        $this->orderStatus = $data['orderStatus'];
+        $this->serialNo = $data['serialNo'];
+        $this->valueCoin = $data['valueCoin'];
     }
 
     /**
@@ -84,31 +83,11 @@ class PurchaseResponse extends AbstractResponse implements IPurchaseResponseInte
     }
 
     /**
-     * @param float $amount
-     * @return PurchaseResponse
-     */
-    private function setAmount(float $amount): self
-    {
-        $this->amount = $amount;
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getId(): string
     {
         return $this->id;
-    }
-
-    /**
-     * @param string $id
-     * @return PurchaseResponse
-     */
-    private function setId(string $id): self
-    {
-        $this->id = $id;
-        return $this;
     }
 
     /**
@@ -120,31 +99,11 @@ class PurchaseResponse extends AbstractResponse implements IPurchaseResponseInte
     }
 
     /**
-     * @param string $ltCode
-     * @return PurchaseResponse
-     */
-    private function setLtCode(string $ltCode): self
-    {
-        $this->ltCode = $ltCode;
-        return $this;
-    }
-
-    /**
      * @return float
      */
     public function getOrderAmount(): float
     {
         return $this->orderAmount;
-    }
-
-    /**
-     * @param float $orderAmount
-     * @return PurchaseResponse
-     */
-    private function setOrderAmount(float $orderAmount): self
-    {
-        $this->orderAmount = $orderAmount;
-        return $this;
     }
 
     /**
@@ -156,31 +115,11 @@ class PurchaseResponse extends AbstractResponse implements IPurchaseResponseInte
     }
 
     /**
-     * @param float $orderQuantity
-     * @return PurchaseResponse
-     */
-    private function setOrderQuantity(float $orderQuantity): self
-    {
-        $this->orderQuantity = $orderQuantity;
-        return $this;
-    }
-
-    /**
      * @return int
      */
     public function getOrderStatus(): int
     {
         return $this->orderStatus;
-    }
-
-    /**
-     * @param int $orderStatus
-     * @return PurchaseResponse
-     */
-    private function setOrderStatus(int $orderStatus): self
-    {
-        $this->orderStatus = $orderStatus;
-        return $this;
     }
 
     /**
@@ -192,16 +131,6 @@ class PurchaseResponse extends AbstractResponse implements IPurchaseResponseInte
     }
 
     /**
-     * @param string $serialNo
-     * @return PurchaseResponse
-     */
-    private function setSerialNo(string $serialNo): self
-    {
-        $this->serialNo = $serialNo;
-        return $this;
-    }
-
-    /**
      * @return \DateTime
      */
     public function getTimestamp(): \DateTime
@@ -210,30 +139,10 @@ class PurchaseResponse extends AbstractResponse implements IPurchaseResponseInte
     }
 
     /**
-     * @param int $timestamp
-     * @return PurchaseResponse
-     */
-    private function setTimestamp(int $timestamp): self
-    {
-        $this->timestamp = DateTimeHelper::makeFromTimestamp($timestamp);
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getValueCoin(): string
     {
         return $this->valueCoin;
-    }
-
-    /**
-     * @param string $valueCoin
-     * @return PurchaseResponse
-     */
-    private function setValueCoin(string $valueCoin): self
-    {
-        $this->valueCoin = $valueCoin;
-        return $this;
     }
 }

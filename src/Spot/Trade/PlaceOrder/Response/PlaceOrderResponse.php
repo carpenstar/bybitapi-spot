@@ -213,7 +213,7 @@ class PlaceOrderResponse extends AbstractResponse implements IPlaceOrderResponse
     }
 
     /**
-     * @param string $orderType
+     * @param string|null $orderType
      * @return $this
      */
     private function setOrderType(?string $orderType): self
@@ -223,11 +223,29 @@ class PlaceOrderResponse extends AbstractResponse implements IPlaceOrderResponse
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStatusgetOrderType(): ?string
+    public function getOrderType(): ?string
     {
         return $this->orderType;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string|null $status
+     * @return PlaceOrderResponse
+     */
+    private function setStatus(?string $status): self
+    {
+        $this->status = $status;
+        return $this;
     }
 
     /**
@@ -246,24 +264,6 @@ class PlaceOrderResponse extends AbstractResponse implements IPlaceOrderResponse
     public function getSide(): ?string
     {
         return $this->side;
-    }
-
-    /**
-     * @param string $status
-     * @return PlaceOrderResponse
-     */
-    private function setStatus(?string $status): self
-    {
-        $this->status = $status;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getStatus(): ?string
-    {
-        return $this->status;
     }
 
     /**

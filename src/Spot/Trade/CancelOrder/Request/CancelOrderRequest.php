@@ -69,7 +69,7 @@ class CancelOrderRequest extends AbstractParameters implements ICancelOrderReque
      * @param int $orderCategory
      * @return CancelOrderRequest
      */
-    public function setOrderCategory(int $orderCategory): self
+    public function setOrderCategory(?int $orderCategory): self
     {
         $this->orderCategory = $orderCategory;
         return $this;

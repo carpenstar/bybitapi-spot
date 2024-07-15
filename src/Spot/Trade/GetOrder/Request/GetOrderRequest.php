@@ -30,10 +30,10 @@ class GetOrderRequest extends AbstractParameters implements IGetOrderRequestInte
     }
 
     /**
-     * @param string $orderId
+     * @param null|string $orderId
      * @return GetOrderRequest
      */
-    public function setOrderId(string $orderId): self
+    public function setOrderId(?string $orderId): self
     {
         $this->orderId = $orderId;
         return $this;
@@ -42,16 +42,16 @@ class GetOrderRequest extends AbstractParameters implements IGetOrderRequestInte
     /**
      * @return string
      */
-    public function getOrderId(): string
+    public function getOrderId(): ?string
     {
         return $this->orderId;
     }
 
     /**
-     * @param string $orderLinkId
+     * @param null|string $orderLinkId
      * @return GetOrderRequest
      */
-    public function setOrderLinkId(string $orderLinkId): self
+    public function setOrderLinkId(?string $orderLinkId): self
     {
         $this->orderLinkId = $orderLinkId;
         return $this;
@@ -60,7 +60,7 @@ class GetOrderRequest extends AbstractParameters implements IGetOrderRequestInte
     /**
      * @return string
      */
-    public function getOrderLinkId(): string
+    public function getOrderLinkId(): ?string
     {
         return $this->orderLinkId;
     }

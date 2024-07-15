@@ -13,7 +13,7 @@ class Purchase extends PrivateEndpoint implements IPostEndpointInterface
         return "/spot/v3/private/purchase";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return PurchaseResponse::class;
     }

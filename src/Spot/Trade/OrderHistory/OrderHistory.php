@@ -13,7 +13,7 @@ class OrderHistory extends PrivateEndpoint implements IGetEndpointInterface
         return "/spot/v3/private/history-orders";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return OrderHistoryResponse::class;
     }

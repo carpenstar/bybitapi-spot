@@ -1,86 +1,83 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\Trade\OpenOrders\Tests;
 
-use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\ResponseHandlerBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\RestBuilder;
-use Carpenstar\ByBitAPI\Core\Enums\EnumOutputMode;
-use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
-use Carpenstar\ByBitAPI\Core\Response\CurlResponseDto;
+use Carpenstar\ByBitAPI\BybitAPI;
+use Carpenstar\ByBitAPI\Core\Exceptions\SDKException;
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
-use Carpenstar\ByBitAPI\Spot\Trade\OpenOrders\Overrides\TestOpenOrders;
+use Carpenstar\ByBitAPI\Spot\Trade\OpenOrders\Interfaces\IOpenOrdersResponseItemInterface;
+use Carpenstar\ByBitAPI\Spot\Trade\OpenOrders\OpenOrders;
 use Carpenstar\ByBitAPI\Spot\Trade\OpenOrders\Request\OpenOrdersRequest;
 use Carpenstar\ByBitAPI\Spot\Trade\OpenOrders\Response\OpenOrdersResponse;
 use PHPUnit\Framework\TestCase;
 
 class OpenOrdersTest extends TestCase
 {
-    static private string $openOrdersResponse = '{"retCode":0,"retMsg":"OK","result":{"list":[{"accountId":"533287","symbol":"BTCUSDT","orderLinkId":"spotx004","orderId":"1210858291884732160","orderPrice":"23500","orderQty":"0.02","execQty":"0","cummulativeQuoteQty":"0","avgPrice":"0","status":"NEW","timeInForce":"GTC","orderType":"LIMIT_MAKER","side":"SELL","stopPrice":"0.0","icebergQty":"0.0","createTime":1659081556722,"updateTime":1659081556740,"isWorking":"1","blockTradeId":"","cancelType":"UNKNOWN","smpGroup":0,"smpOrderId":"","smpType":"None"}]},"retExtInfo": {},"time": 1659081570356}';
-
-    public function testOpenOrdersDTOBuilder()
+    /**
+     * Тестирование заполнения структуры ответа
+     * @return void
+     */
+    public function testBuildResponseData()
     {
-        foreach (json_decode(self::$openOrdersResponse, true)['result']['list'] as $order) {
-            $dto = ResponseDtoBuilder::make(OpenOrdersResponse::class, $order);
-            $this->assertInstanceOf(OpenOrdersResponse::class, $dto);
+        $json = '{"retCode":0,"retMsg":"OK","result":{"list":[{"accountId":"533287","symbol":"BTCUSDT","orderLinkId":"spotx004","orderId":"1210858291884732160","orderPrice":"23500","orderQty":"0.02","execQty":"0","cummulativeQuoteQty":"0","avgPrice":"0","status":"NEW","timeInForce":"GTC","orderType":"LIMIT_MAKER","side":"SELL","stopPrice":"0.0","icebergQty":"0.0","createTime":1659081556722,"updateTime":1659081556740,"isWorking":"1","blockTradeId":"","cancelType":"UNKNOWN","smpGroup":0,"smpOrderId":"","smpType":"None"}]},"retExtInfo": {},"time": 1659081570356}';
+        $data = (new CurlResponseHandler())->build(json_decode($json, true), OpenOrdersResponse::class);
 
-            $this->assertNotNull($dto->getSide());
-            $this->assertNotNull($dto->getAccountId());
-            $this->assertNotNull($dto->getSymbol());
-            $this->assertNotNull($dto->getOrderLinkId());
-            $this->assertNotNull($dto->getOrderId());
-            $this->assertNotNull($dto->getOrderPrice());
-            $this->assertNotNull($dto->getOrderQty());
-            $this->assertNotNull($dto->getExecQty());
-            $this->assertNotNull($dto->getAvgPrice());
-            $this->assertNotNull($dto->getCummulativeQuoteQty());
-            $this->assertNotNull($dto->getStatus());
-            $this->assertNotNull($dto->getTimeInForce());
-            $this->assertNotNull($dto->getOrderType());
-            $this->assertNotNull($dto->getStopPrice());
-            $this->assertNotNull($dto->getCreateTime());
-            $this->assertNotNull($dto->getUpdateTime());
-            $this->assertNotNull($dto->getIsWorking());
+        $this->assertEquals(0, $data->getReturnCode());
+        $this->assertEquals('OK', $data->getReturnMessage());
+        $this->assertInstanceOf(OpenOrdersResponse::class, $data->getResult());
+
+        /** @var OpenOrdersResponse $orderInfo */
+        $orderInfo = $data->getResult();
+        foreach ($orderInfo->getOpenOrders() as $order) {
+            $this->assertNotNull($order->getSide());
+            $this->assertNotNull($order->getAccountId());
+            $this->assertNotNull($order->getSymbol());
+            $this->assertNotNull($order->getOrderLinkId());
+            $this->assertNotNull($order->getOrderId());
+            $this->assertNotNull($order->getOrderPrice());
+            $this->assertNotNull($order->getOrderQty());
+            $this->assertNotNull($order->getExecQty());
+            $this->assertNotNull($order->getAvgPrice());
+            $this->assertNotNull($order->getCummulativeQuoteQty());
+            $this->assertNotNull($order->getStatus());
+            $this->assertNotNull($order->getTimeInForce());
+            $this->assertNotNull($order->getOrderType());
+            $this->assertNotNull($order->getStopPrice());
+            $this->assertNotNull($order->getCreateTime());
+            $this->assertNotNull($order->getUpdateTime());
+            $this->assertNotNull($order->getIsWorking());
         }
     }
 
-    public function testOpenOrdersResponseHandlerBuilder()
+    /**
+     * Тестирование эндпоинта на корректное исполнение
+     * @return void
+     * @throws SDKException
+     */
+    public function testCancelOrderEndpoint()
     {
-        $handler = ResponseHandlerBuilder::make(self::$openOrdersResponse, CurlResponseHandler::class, OpenOrdersResponse::class);
-        $this->assertInstanceOf(EntityCollection::class, $handler->getBody());
-        $this->assertGreaterThan(0, $handler->getBody()->count());
-    }
+        $bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com', 'fL02oi5qo8i2jDxlum', 'Ne1EE35XTprIWrId9vGEAc1ZYJTmodA4qFzZ');
 
-    public function testOpenOrdersEndpoint()
-    {
-        $endpoint = RestBuilder::make(TestOpenOrders::class, (new OpenOrdersRequest()));
+        $openOrdersResponse = $bybit->privateEndpoint(OpenOrders::class, (new OpenOrdersRequest())->setSymbol('ETHUSDT'))->execute();
 
-        $entityResponse = $endpoint->execute(EnumOutputMode::MODE_ENTITY, self::$openOrdersResponse);
-        $this->assertInstanceOf(CurlResponseDto::class, $entityResponse);
-        $body = $entityResponse->getBody();
-        $this->assertInstanceOf(EntityCollection::class, $body);
+        $this->assertEquals(0, $openOrdersResponse->getReturnCode());
+        $this->assertEquals('OK', $openOrdersResponse->getReturnMessage());
+        $this->assertInstanceOf(OpenOrdersResponse::class, $openOrdersResponse->getResult());
 
-        while (!empty($order = $body->fetch())) {
-            $this->assertIsInt($order->getAccountId());
-            $this->assertIsString($order->getSymbol());
-            $this->assertIsString($order->getOrderLinkId());
+        $orderInfoList = $openOrdersResponse->getResult()->getOpenOrders();
+
+        foreach ($orderInfoList as $order) {
             $this->assertIsInt($order->getOrderId());
+            $this->assertIsString($order->getOrderLinkId());
+            $this->assertIsString($order->getSymbol());
+            $this->assertIsString($order->getStatus());
+            $this->assertIsInt($order->getAccountId());
             $this->assertIsFloat($order->getOrderPrice());
+            $this->assertInstanceOf(\DateTime::class, $order->getCreateTime());
             $this->assertIsFloat($order->getOrderQty());
             $this->assertIsFloat($order->getExecQty());
-            $this->assertIsFloat($order->getCummulativeQuoteQty());
-            $this->assertIsFloat($order->getAvgPrice());
-            $this->assertIsString($order->getStatus());
             $this->assertIsString($order->getTimeInForce());
             $this->assertIsString($order->getOrderType());
             $this->assertIsString($order->getSide());
-            $this->assertIsFloat($order->getStopPrice());
-            $this->assertInstanceOf(\DateTime::class, $order->getCreateTime());
-            $this->assertInstanceOf(\DateTime::class, $order->getUpdateTime());
-            $this->assertIsInt($order->getIsWorking());
-            $this->assertIsInt($order->getOrderCategory());
-            if (!is_null($order->getTriggerPrice())) {
-                $this->assertIsFloat($order->getTriggerPrice());
-            }
         }
     }
 }

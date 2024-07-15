@@ -8,7 +8,11 @@
 \Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\BestBidAskPrice::class
 ```
 
-<p align="center" width="100%"><b>ПРИМЕР</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПРИМЕР</b></h3>
+
+---
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -16,15 +20,13 @@ use Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\BestBidAskPrice;
 use Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Request\BestBidAskPriceRequest;
 use Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Response\BestBidAskPriceResponse;
 
-$bybit = new BybitAPI('https://api-testnet.bybit.com',"apiKey", "secret");
+$bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com',"apiKey", "secret");
 
-$options = (new BestBidAskPriceRequest())->setSymbol("BTCUSDT");
+$bestBidAskPriceResponse = $bybit->publicEndpoint(BestBidAskPrice::class, (new BestBidAskPriceRequest())->setSymbol("BTCUSDT"))
+    ->execute()
+    ->getResult();
 
 /** @var BestBidAskPriceResponse $bestBidAskPrice */
-$bestBidAskPrice = $bybit->rest(BestBidAskPrice::class, $options)->getBody()->fetch();
-
-
-
 echo "Symbol: {$bestBidAskPrice->getSymbol()}" . PHP_EOL;
 echo "Bid Price: {$bestBidAskPrice->getBidPrice()}" . PHP_EOL;
 echo "Bid Qty: {$bestBidAskPrice->getBidQty()}" . PHP_EOL;
@@ -44,7 +46,11 @@ echo "Time: {$bestBidAskPrice->getTime()->format("Y-m-d H:i:s")}" . PHP_EOL;
  */
 ```
 
-<p align="center" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>ПАРАМЕТРЫ ЗАПРОСА</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces;
@@ -82,7 +88,9 @@ interface IBestBidAskPriceRequestInterface
   </tr>
 </table>
 
-<p align="center" width="100%"><b>СТРУКТУРА ОТВЕТА</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>СТРУКТУРА ОТВЕТА</b></h3>
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Interfaces;

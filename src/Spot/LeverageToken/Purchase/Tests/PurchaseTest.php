@@ -1,47 +1,37 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Tests;
 
-use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\ResponseHandlerBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\RestBuilder;
-use Carpenstar\ByBitAPI\Core\Enums\EnumOutputMode;
-use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
-use Carpenstar\ByBitAPI\Core\Response\CurlResponseDto;
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
-use Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Overrides\TestPurchase;
-use Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Request\PurchaseRequest;
 use Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Response\PurchaseResponse;
 use PHPUnit\Framework\TestCase;
 
 class PurchaseTest extends TestCase
 {
-    static private string $purchaseResponse = '{"retCode":0,"retMsg":"success","result":{"amount":"100","id":"2085","ltCode":"DOT3LUSDT","orderAmount":"","orderQuantity":"","orderStatus":"2","serialNo":"x005","timestamp": 1662549845373,"valueCoin":"USDT"},"retExtInfo":{},"time":1662549845453}';
-
-    public function testMarketInfoDTOBuilder()
+    /**
+     * Тестирование сборки объекта ответа
+     *
+     * @return void
+     */
+    public function testBuildResponseData()
     {
-        $dto = ResponseDtoBuilder::make(PurchaseResponse::class, json_decode(self::$purchaseResponse, true)['result']);
-        $this->assertInstanceOf(PurchaseResponse::class, $dto);
-    }
+        $json = '{"retCode":0,"retMsg":"OK","result":{"amount":"100","id":"2085","ltCode":"DOT3LUSDT","orderAmount":"","orderQuantity":"","orderStatus":"2","serialNo":"x005","timestamp": 1662549845373,"valueCoin":"USDT"},"retExtInfo":{},"time":1662549845453}';
+        $data = (new CurlResponseHandler())->build(json_decode($json, true), PurchaseResponse::class);
 
-    public function testMarketInfoResponseHandlerBuilder()
-    {
-        $handler = ResponseHandlerBuilder::make(self::$purchaseResponse, CurlResponseHandler::class, PurchaseResponse::class);
-        $this->assertInstanceOf(EntityCollection::class, $handler->getBody());
-        $this->assertGreaterThan(0, $handler->getBody()->count());
-    }
+        $this->assertEquals(0, $data->getReturnCode());
+        $this->assertEquals('OK', $data->getReturnMessage());
+        $this->assertInstanceOf(PurchaseResponse::class, $data->getResult());
 
-    public function testMarketInfoEndpoint()
-    {
-        $endpoint = RestBuilder::make(TestPurchase::class, (new PurchaseRequest()));
+        /** @var PurchaseResponse $purchaseInfo */
+        $purchaseInfo = $data->getResult();
 
-        $entityResponse = $endpoint->execute(EnumOutputMode::MODE_ENTITY, self::$purchaseResponse);
-        $this->assertInstanceOf(CurlResponseDto::class, $entityResponse);
-        $body = $entityResponse->getBody();
-        $this->assertInstanceOf(EntityCollection::class, $body);
-
-        foreach ($body->fetch() as $wallet) {
-            $dto = ResponseDtoBuilder::make(PurchaseResponse::class, $wallet);
-            $this->assertInstanceOf(PurchaseResponse::class, $dto);
-        }
+        $this->assertInstanceOf(\DateTime::class, $purchaseInfo->getTimestamp());
+        $this->assertEquals(100, $purchaseInfo->getAmount());
+        $this->assertEquals(2085, $purchaseInfo->getId());
+        $this->assertEquals('DOT3LUSDT', $purchaseInfo->getLtCode());
+        $this->assertEquals(0.0, $purchaseInfo->getOrderAmount());
+        $this->assertEquals(0.0, $purchaseInfo->getOrderQuantity());
+        $this->assertEquals(2, $purchaseInfo->getOrderStatus());
+        $this->assertEquals('x005', $purchaseInfo->getSerialNo());
+        $this->assertEquals('USDT', $purchaseInfo->getValueCoin());
     }
 }

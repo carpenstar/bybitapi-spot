@@ -4,7 +4,7 @@ namespace Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory;
 use Carpenstar\ByBitAPI\Core\Endpoints\PrivateEndpoint;
 use Carpenstar\ByBitAPI\Core\Interfaces\IGetEndpointInterface;
 use Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Request\PurchaseRedeemHistoryRequest;
-use Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Response\PurchaseRedeemHistoryResponse;
+use Carpenstar\ByBitAPI\Spot\LeverageToken\PurchaseRedeemHistory\Response\PurchaseRedeemHistoryResponseItem;
 
 class PurchaseRedeemHistory extends PrivateEndpoint implements IGetEndpointInterface
 {
@@ -13,9 +13,9 @@ class PurchaseRedeemHistory extends PrivateEndpoint implements IGetEndpointInter
         return "/spot/v3/private/record";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(): string
     {
-        return PurchaseRedeemHistoryResponse::class;
+        return PurchaseRedeemHistoryResponseItem::class;
     }
 
     protected function getRequestClassname(): string

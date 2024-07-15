@@ -1,71 +1,109 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\Trade\CancelOrder\Tests;
 
-use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\ResponseHandlerBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\RestBuilder;
-use Carpenstar\ByBitAPI\Core\Enums\EnumOutputMode;
-use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
-use Carpenstar\ByBitAPI\Core\Response\CurlResponseDto;
+use Carpenstar\ByBitAPI\BybitAPI;
+use Carpenstar\ByBitAPI\Core\Enums\EnumOrderType;
+use Carpenstar\ByBitAPI\Core\Enums\EnumSide;
+use Carpenstar\ByBitAPI\Core\Exceptions\SDKException;
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
-use Carpenstar\ByBitAPI\Spot\Trade\CancelOrder\Overrides\TestCancelOrder;
+use Carpenstar\ByBitAPI\Spot\Trade\CancelOrder\CancelOrder;
 use Carpenstar\ByBitAPI\Spot\Trade\CancelOrder\Request\CancelOrderRequest;
 use Carpenstar\ByBitAPI\Spot\Trade\CancelOrder\Response\CancelOrderResponse;
+use Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\PlaceOrder;
+use Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Request\PlaceOrderRequest;
+use Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Response\PlaceOrderResponse;
 use PHPUnit\Framework\TestCase;
 
 class CancelOrderTest extends TestCase
 {
-    static private string $cancelOrderResponse = '{"retCode":0,"retMsg":"OK","result":{"orderId":"1477137337600322304","orderLinkId":"64c7ef2bdf040","symbol":"BTCUSDT","createTime":"1690824492584","orderPrice":"1000","orderQty":"0.001","orderType":"LIMIT","side":"BUY","status":"NEW","timeInForce":"GTC","accountId":"1111837","execQty":"0","orderCategory":0,"smpType":"None"},"retExtInfo":{},"time":1690824492593}';
-
-    public function testCancelOrderDTOBuilder()
+    /**
+     * Тестирование заполнения структуры ответа
+     * @return void
+     */
+    public function testBuildResponseData()
     {
-        $dto = ResponseDtoBuilder::make(CancelOrderResponse::class, json_decode(self::$cancelOrderResponse, true)['result']);
-        $this->assertInstanceOf(CancelOrderResponse::class, $dto);
+        $json = '{"retCode":0,"retMsg":"OK","result":{"orderId":"1477137337600322304","orderLinkId":"64c7ef2bdf040","symbol":"BTCUSDT","createTime":"1690824492584","orderPrice":"1000","orderQty":"0.001","orderType":"LIMIT","side":"BUY","status":"NEW","timeInForce":"GTC","accountId":"1111837","execQty":"0","orderCategory":0,"smpType":"None"},"retExtInfo":{},"time":1690824492593}';
+        $data = (new CurlResponseHandler())->build(json_decode($json, true), CancelOrderResponse::class);
 
-        $this->assertIsInt($dto->getOrderId());
-        $this->assertIsString($dto->getOrderLinkId());
-        $this->assertIsString($dto->getSymbol());
-        $this->assertIsString($dto->getStatus());
-        $this->assertIsInt($dto->getAccountId());
-        $this->assertIsFloat($dto->getOrderPrice());
-        $this->assertInstanceOf(\DateTime::class, $dto->getCreateTime());
-        $this->assertIsFloat($dto->getOrderQty());
-        $this->assertIsFloat($dto->getExecQty());
-        $this->assertIsString($dto->getTimeInForce());
-        $this->assertIsString($dto->getOrderType());
-        $this->assertIsString($dto->getSide());
+        $this->assertEquals(0, $data->getReturnCode());
+        $this->assertEquals('OK', $data->getReturnMessage());
+        $this->assertInstanceOf(CancelOrderResponse::class, $data->getResult());
+
+        /** @var CancelOrderResponse $cancelOrderInfo */
+        $cancelOrderInfo = $data->getResult();
+
+        $this->assertIsInt($cancelOrderInfo->getOrderId());
+        $this->assertIsString($cancelOrderInfo->getOrderLinkId());
+        $this->assertIsString($cancelOrderInfo->getSymbol());
+        $this->assertIsString($cancelOrderInfo->getStatus());
+        $this->assertIsInt($cancelOrderInfo->getAccountId());
+        $this->assertIsFloat($cancelOrderInfo->getOrderPrice());
+        $this->assertInstanceOf(\DateTime::class, $cancelOrderInfo->getCreateTime());
+        $this->assertIsFloat($cancelOrderInfo->getOrderQty());
+        $this->assertIsFloat($cancelOrderInfo->getExecQty());
+        $this->assertIsString($cancelOrderInfo->getTimeInForce());
+        $this->assertIsString($cancelOrderInfo->getOrderType());
+        $this->assertIsString($cancelOrderInfo->getSide());
 
     }
 
-    public function testCancelOrderResponseHandlerBuilder()
-    {
-        $handler = ResponseHandlerBuilder::make(self::$cancelOrderResponse, CurlResponseHandler::class, CancelOrderResponse::class);
-        $this->assertInstanceOf(EntityCollection::class, $handler->getBody());
-        $this->assertGreaterThan(0, $handler->getBody()->count());
-    }
-
+    /**
+     * Тестирование эндпоинта на корректное исполнение
+     * @return void
+     * @throws SDKException
+     */
     public function testCancelOrderEndpoint()
     {
-        $endpoint = RestBuilder::make(TestCancelOrder::class, (new CancelOrderRequest())->setOrderId('1477137337600322304'));
+        $bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com', 'fL02oi5qo8i2jDxlum', 'Ne1EE35XTprIWrId9vGEAc1ZYJTmodA4qFzZ');
 
-        $entityResponse = $endpoint->execute(EnumOutputMode::MODE_ENTITY, self::$cancelOrderResponse);
-        $this->assertInstanceOf(CurlResponseDto::class, $entityResponse);
-        $body = $entityResponse->getBody();
-        $this->assertInstanceOf(EntityCollection::class, $body);
+        $params = (new PlaceOrderRequest())
+            ->setSide(EnumSide::BUY)
+            ->setOrderType(EnumOrderType::LIMIT)
+            ->setOrderPrice(3000)
+            ->setSymbol("ETHUSDT")
+            ->setOrderQty(1);
 
-        $dto = $body->fetch();
 
-        $this->assertIsInt($dto->getOrderId());
-        $this->assertIsString($dto->getOrderLinkId());
-        $this->assertIsString($dto->getSymbol());
-        $this->assertIsString($dto->getStatus());
-        $this->assertIsInt($dto->getAccountId());
-        $this->assertIsFloat($dto->getOrderPrice());
-        $this->assertInstanceOf(\DateTime::class, $dto->getCreateTime());
-        $this->assertIsFloat($dto->getOrderQty());
-        $this->assertIsFloat($dto->getExecQty());
-        $this->assertIsString($dto->getTimeInForce());
-        $this->assertIsString($dto->getOrderType());
-        $this->assertIsString($dto->getSide());
+        $placeOrderEndpoint = $bybit->privateEndpoint(PlaceOrder::class, $params)->execute();
+
+        /** @var PlaceOrderResponse $orderInfo */
+        $orderInfo = $placeOrderEndpoint->getResult();
+
+        $this->assertNotEmpty($orderInfo->getOrderId());
+        $this->assertNotEmpty($orderInfo->getOrderLinkId());
+        $this->assertEquals('ETHUSDT', $orderInfo->getSymbol());
+        $this->assertInstanceOf(\DateTime::class, $orderInfo->getCreateTime());
+        $this->assertTrue($orderInfo->getOrderPrice() == 3000);
+        $this->assertTrue($orderInfo->getOrderQty() == 1);
+        $this->assertEquals(strtoupper(EnumOrderType::LIMIT), $orderInfo->getOrderType());
+        $this->assertEquals(strtoupper(EnumSide::BUY), $orderInfo->getSide());
+        $this->assertEquals('NEW', $orderInfo->getStatus());
+        $this->assertEquals('GTC', $orderInfo->getTimeInForce());
+        $this->assertNotEmpty($orderInfo->getAccountId());
+        $this->assertEmpty($orderInfo->getTriggerPrice());
+
+
+
+        $canceledOrderResponse = $bybit->privateEndpoint(CancelOrder::class, (new CancelOrderRequest())->setOrderId($orderInfo->getOrderId()))->execute();
+
+        $this->assertEquals(0, $canceledOrderResponse->getReturnCode());
+        $this->assertEquals('OK', $canceledOrderResponse->getReturnMessage());
+        $this->assertInstanceOf(CancelOrderResponse::class, $canceledOrderResponse->getResult());
+
+        /** @var CancelOrderResponse $cancelOrderInfo */
+        $cancelOrderInfo = $canceledOrderResponse->getResult();
+
+        $this->assertIsInt($cancelOrderInfo->getOrderId());
+        $this->assertIsString($cancelOrderInfo->getOrderLinkId());
+        $this->assertIsString($cancelOrderInfo->getSymbol());
+        $this->assertIsString($cancelOrderInfo->getStatus());
+        $this->assertIsInt($cancelOrderInfo->getAccountId());
+        $this->assertIsFloat($cancelOrderInfo->getOrderPrice());
+        $this->assertInstanceOf(\DateTime::class, $cancelOrderInfo->getCreateTime());
+        $this->assertIsFloat($cancelOrderInfo->getOrderQty());
+        $this->assertIsFloat($cancelOrderInfo->getExecQty());
+        $this->assertIsString($cancelOrderInfo->getTimeInForce());
+        $this->assertIsString($cancelOrderInfo->getOrderType());
+        $this->assertIsString($cancelOrderInfo->getSide());
     }
 }

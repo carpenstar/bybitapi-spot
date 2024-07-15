@@ -16,7 +16,7 @@ class PublicTradingRecords extends PublicEndpoint implements IGetEndpointInterfa
         return "/spot/v3/public/quote/trades";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return PublicTradingRecordsResponse::class;
     }

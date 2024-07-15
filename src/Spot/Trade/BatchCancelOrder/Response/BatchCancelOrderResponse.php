@@ -2,35 +2,22 @@
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\Response;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractResponse;
-use Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\IBatchCancelOrderResponseInterface;
+use Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\Interfaces\IBatchCancelOrderResponseInterface;
 
 class BatchCancelOrderResponse extends AbstractResponse implements IBatchCancelOrderResponseInterface
 {
-    /**
-     * @var bool $success
-     */
+    /** @var bool $success */
     private bool $success;
 
     public function __construct(array $data)
     {
-        $this
-            ->setSuccess($data['success']);
-    }
-
-    /**
-     * @param int $success
-     * @return BatchCancelOrderResponse
-     */
-    public function setSuccess(int $success): self
-    {
-        $this->success = (bool)$success;
-        return $this;
+        $this->success = (bool) $data['success'];
     }
 
     /**
      * @return bool
      */
-    public function getSuccess(): bool
+    public function isSuccess(): bool
     {
         return $this->success;
     }

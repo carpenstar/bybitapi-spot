@@ -16,7 +16,7 @@ class OrderBook extends PublicEndpoint implements IGetEndpointInterface
         return "/spot/v3/public/quote/depth";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return OrderBookResponse::class;
     }

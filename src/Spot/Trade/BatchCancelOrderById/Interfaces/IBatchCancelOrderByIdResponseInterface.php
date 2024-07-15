@@ -1,8 +1,12 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Interfaces;
 
+
 interface IBatchCancelOrderByIdResponseInterface
 {
-    public function getOrderId(): int;
-    public function getCode(): string;
+    /**
+     * List. If all success, it returns empty array
+     * @return IBatchCancelOrderByIdResponseItemInterface[]
+     */
+    public function getErrorOrderList(): array;
 }

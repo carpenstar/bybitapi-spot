@@ -6,7 +6,11 @@
 \Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\MergedOrderBook::class
 ```
 
-<p align="center" width="100%"><b>EXAMPLE</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>EXAMPLE</b></h3>
+
+---
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -15,55 +19,53 @@ use Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Response\MergedOrderBook
 use Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\MergedOrderBook;
 use Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Response\MergedOrderBookPriceResponse;
 
-$bybit = new BybitAPI('https://api-testnet.bybit.com',"apiKey", "secret");
+$bybit = (new BybitAPI())->setCredentials('https://api-testnet.bybit.com', 'apiKey', 'apiSecret');
 
-$options = (new MergedOrderBookRequest())
-    ->setSymbol("BTCUSDT")
-    ->setScale(1)
-    ->setLimit(5);
+/** @var \Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces\IMergedOrderBookResponseInterface $mergedOrderBook */
+$mergedOrderBook = $bybit->publicEndpoint(MergedOrderBook::class, 
+    (new MergedOrderBookRequest())->setSymbol("ETHUSDT")
+        ->setScale(1)
+        ->setLimit(5)
+    )->execute()
+    ->getResult();
 
-/** @var MergedOrderBookResponse $mergedOrderBook */
-$mergedOrderBook = $bybit->rest(MergedOrderBook::class, $options)->getBody()->fetch();
 
-
-
-echo "Time: {$mergedOrderBook->getTime()->format('Y-m-d H:i:s')}" . PHP_EOL;
-echo '---' . PHP_EOL;
-/** @var MergedOrderBookPriceResponse $bid */
+echo "Time: {$mergedOrderBook->getTime()->format('Y-m-d H:i:s')} \n";
+echo "---\n";
+/** @var \Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces\IMergedOrderBookPriceResponseInterface $bid */
 foreach ($mergedOrderBook->getBids()->all() as $bid) {
-    echo " - Bid Price: {$bid->getPrice()} Bid Quantity: {$bid->getQuantity()}" . PHP_EOL;
+    echo " - Bid Price: {$bid->getPrice()} Bid Quantity: {$bid->getQuantity()} \n";
 }
-echo '---' . PHP_EOL;
-/** @var MergedOrderBookPriceResponse $ask */
+echo "---\n";
+/** @var \Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces\IMergedOrderBookPriceResponseInterface $ask */
 foreach ($mergedOrderBook->getAsks()->all() as $ask) {
-    echo " - Ask Price: {$ask->getPrice()} Ask Quantity: {$ask->getQuantity()}" . PHP_EOL;
+    echo " - Ask Price: {$ask->getPrice()} Ask Quantity: {$ask->getQuantity()} \n";
 }
-echo '---' . PHP_EOL;
-
-
+echo "---\n";
+        
 /**
- * Result:
- *
- * Time: 2023-05-11 21:10:57
- * ---
- * - Bid Price: 27028.4 Bid Quantity: 0.052636
- * - Bid Price: 27028.3 Bid Quantity: 0.193124
- * - Bid Price: 27014.8 Bid Quantity: 0.020057
- * - Bid Price: 27014.7 Bid Quantity: 0.003761
- * - Bid Price: 26938.2 Bid Quantity: 0.001864
- * ---
- * - Ask Price: 27028.5 Ask Quantity: 0.132579
- * - Ask Price: 27028.6 Ask Quantity: 0.077184
- * - Ask Price: 27033.1 Ask Quantity: 0.152256
- * - Ask Price: 27033.2 Ask Quantity: 0.016766
- * - Ask Price: 27033.4 Ask Quantity: 0.112448
- * ---
- */
+* Time: 2024-06-16 17:42:15
+* ---
+*  - Bid Price: 3578.6 Bid Quantity: 209.15826 
+*  - Bid Price: 3568.4 Bid Quantity: 452.08023 
+*  - Bid Price: 3567.2 Bid Quantity: 409.5493 
+*  - Bid Price: 3566.3 Bid Quantity: 440.48361 
+*  - Bid Price: 3566 Bid Quantity: 173.67083 
+* ---
+*  - Ask Price: 3581.5 Ask Quantity: 176.0028 
+*  - Ask Price: 3581.6 Ask Quantity: 434.83865 
+*  - Ask Price: 3581.8 Ask Quantity: 1.29348 
+*  - Ask Price: 3582.5 Ask Quantity: 0.00045 
+*  - Ask Price: 3583.1 Ask Quantity: 478.33371 
+* ---
+*/
 ```
 
----
+<br />
 
-<p align="center" width="100%"><b>REQUEST PARAMETERS</b></p>
+<h3 align="left" width="100%"><b>REQUEST PARAMETERS</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces;
@@ -110,9 +112,11 @@ interface IMergedOrderBookRequestInterface
    </tr>
 </table>
 
----
+<br />
 
-<p align="center" width="100%"><b>RESPONSE STRUCTURE</b></p>
+<h3 align="left" width="100%"><b>RESPONSE STRUCTURE</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Interfaces;

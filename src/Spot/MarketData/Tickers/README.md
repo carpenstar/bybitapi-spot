@@ -6,7 +6,11 @@
 \Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Tickers::class
 ```
 
-<p align="center" width="100%"><b>EXAMPLE</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>EXAMPLE</b></h3>
+
+---
 
 ```php
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -20,8 +24,7 @@ $options = (new TickersRequest())
     ->setSymbol("ATOMUSDT");
 
 /** @var TickersResponse $tickersData */
-$tickersData = $bybit->rest(Tickers::class, $options)->getBody()->fetch();
-
+$tickersData = $bybit->publicEndpoint(Tickers::class, $options)->execute()->getResult();
 
 
 echo "Time: {$tickersData->getTime()->format('Y-m-d H:i:s')}" . PHP_EOL;
@@ -51,9 +54,11 @@ echo "Trading Quote Volume: {$tickersData->getTradingQuoteVolume()}" . PHP_EOL;
  */
 ```
 
----
+<br />
 
-<p align="center" width="100%"><b>QUERY PARAMETERS</b></p>
+<h3 align="left" width="100%"><b>QUERY PARAMETERS</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces;
@@ -90,7 +95,11 @@ interface ITickerRequestInterface
    </tr>
 </table>
 
-<p align="center" width="100%"><b>RESPONSE STRUCTURE</b></p>
+<br />
+
+<h3 align="left" width="100%"><b>RESPONSE STRUCTURE</b></h3>
+
+---
 
 ```php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Interfaces;

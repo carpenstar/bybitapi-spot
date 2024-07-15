@@ -1,57 +1,34 @@
 <?php
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Tests;
 
-use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\ResponseHandlerBuilder;
-use Carpenstar\ByBitAPI\Core\Builders\RestBuilder;
-use Carpenstar\ByBitAPI\Core\Enums\EnumOutputMode;
-use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
-use Carpenstar\ByBitAPI\Core\Response\CurlResponseDto;
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
-use Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Overrides\TestBestBidAskPrice;
-use Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Request\BestBidAskPriceRequest;
 use Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Response\BestBidAskPriceResponse;
 use PHPUnit\Framework\TestCase;
 
 class BestBidAskPriceTest extends TestCase
 {
-    private static string $bestBidAskApiResponse = '{"retCode":0,"retMsg":"OK","result":{"symbol":"BTCUSDT","bidPrice":"26298.69","bidQty":"0.106418","askPrice":"26298.7","askQty":"0.008773","time":1683979447464},"retExtInfo":{},"time":1683979447820}';
-
-    public function testBestBidAskPriceDTOBuilder()
+    /**
+     * Тестирование сборки объекта ответа
+     *
+     * @return void
+     */
+    public function testBuildResponseData()
     {
-        $dto = ResponseDtoBuilder::make(BestBidAskPriceResponse::class, json_decode(self::$bestBidAskApiResponse, true)['result']);
+        $json = '{"retCode":0,"retMsg":"OK","result":{"symbol":"BTCUSDT","bidPrice":"26298.69","bidQty":"0.106418","askPrice":"26298.7","askQty":"0.008773","time":1683979447464},"retExtInfo":{},"time":1683979447820}';;
+        $data = (new CurlResponseHandler())->build(json_decode($json, true), BestBidAskPriceResponse::class);
 
-        $this->assertInstanceOf(BestBidAskPriceResponse::class, $dto);
-        $this->assertIsString($dto->getSymbol());
-        $this->assertIsFloat($dto->getAskPrice());
-        $this->assertIsFloat($dto->getBidPrice());
-        $this->assertIsFloat($dto->getAskQty());
-        $this->assertIsFloat($dto->getBidQty());
-        $this->assertInstanceOf(\DateTime::class, $dto->getTime());
-    }
+        $this->assertEquals(0, $data->getReturnCode());
+        $this->assertEquals('OK', $data->getReturnMessage());
+        $this->assertInstanceOf(BestBidAskPriceResponse::class, $data->getResult());
 
-    public function testBestBidAskPriceResponseHandlerBuilder()
-    {
-        $handler = ResponseHandlerBuilder::make(self::$bestBidAskApiResponse, CurlResponseHandler::class, BestBidAskPriceResponse::class);
-        $this->assertInstanceOf(EntityCollection::class, $handler->getBody());
-        $this->assertGreaterThan(0, $handler->getBody()->count());
-    }
+        /** @var BestBidAskPriceResponse $priceInfo */
+        $priceInfo = $data->getResult();
 
-    public function testBestBidAskPriceEndpoint()
-    {
-        $endpoint = RestBuilder::make(TestBestBidAskPrice::class, (new BestBidAskPriceRequest())->setSymbol("BTCUSDT"));
-
-        $entityResponse = $endpoint->execute(EnumOutputMode::MODE_ENTITY, self::$bestBidAskApiResponse);
-        $this->assertInstanceOf(CurlResponseDto::class, $entityResponse);
-        $body = $entityResponse->getBody();
-        $this->assertInstanceOf(EntityCollection::class, $body);
-        $body = $body->fetch();
-
-        $this->assertIsString($body->getSymbol());
-        $this->assertIsFloat($body->getAskPrice());
-        $this->assertIsFloat($body->getBidPrice());
-        $this->assertIsFloat($body->getAskQty());
-        $this->assertIsFloat($body->getBidQty());
-        $this->assertInstanceOf(\DateTime::class, $body->getTime());
+        $this->assertInstanceOf(\DateTime::class, $priceInfo->getTime());
+        $this->assertEquals('BTCUSDT', $priceInfo->getSymbol());
+        $this->assertEquals(26298.69, $priceInfo->getBidPrice());
+        $this->assertEquals(0.106418, $priceInfo->getBidQty());
+        $this->assertEquals(26298.7, $priceInfo->getAskPrice());
+        $this->assertEquals(0.008773, $priceInfo->getAskQty());
     }
 }

@@ -16,7 +16,7 @@ class MergedOrderBook extends PublicEndpoint implements IGetEndpointInterface
         return "/spot/v3/public/quote/depth/merged";
     }
 
-    protected function getResponseClassname(): string
+    protected function getResponseClassnameByCondition(array &$apiData = null): string
     {
         return MergedOrderBookResponse::class;
     }
