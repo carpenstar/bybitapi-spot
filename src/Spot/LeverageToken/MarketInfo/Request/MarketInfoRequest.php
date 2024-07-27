@@ -8,11 +8,6 @@ class MarketInfoRequest extends AbstractParameters implements IMarketInfoRequest
 {
     protected string $ltCode;
 
-    public function __construct()
-    {
-        $this->setRequiredField("ltCode");
-    }
-
     public function setLtCode(string $ltCode): self
     {
         $this->ltCode = $ltCode;

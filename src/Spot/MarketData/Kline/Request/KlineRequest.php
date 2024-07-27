@@ -44,13 +44,6 @@ class KlineRequest extends AbstractParameters implements IKlineRequestInterface
      */
     protected int $endTime;
 
-    public function __construct()
-    {
-        $this
-            ->setRequiredField('symbol')
-            ->setRequiredField('interval');
-    }
-
     /**
      * @param string $symbol
      * @return KlineRequestEntity

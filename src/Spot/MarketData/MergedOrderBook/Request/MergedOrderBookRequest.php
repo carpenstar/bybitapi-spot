@@ -27,11 +27,6 @@ class MergedOrderBookRequest extends AbstractParameters implements IMergedOrderB
      */
     protected int $limit = 100;
 
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
-
     /**
      * @return string
      */

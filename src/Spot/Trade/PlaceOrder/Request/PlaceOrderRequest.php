@@ -75,15 +75,6 @@ class PlaceOrderRequest extends AbstractParameters implements IPlaceOrderRequest
      */
     protected float $triggerPrice;
 
-    public function __construct()
-    {
-        $this
-            ->setRequiredField('symbol')
-            ->setRequiredField('orderQty')
-            ->setRequiredField('side')
-            ->setRequiredField('orderType');
-    }
-
     /**
      * @param string $symbol
      * @return $this

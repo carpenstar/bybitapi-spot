@@ -25,13 +25,6 @@ class PurchaseRequest extends AbstractParameters implements IPurchaseRequestInte
      */
     protected string $serialNo;
 
-    public function __construct()
-    {
-        $this
-            ->setRequiredField('ltCode')
-            ->setRequiredField('ltAmount');
-    }
-
     /**
      * @return string
      */

@@ -18,11 +18,6 @@ class BatchCancelOrderByIdRequest extends AbstractParameters implements IBatchCa
      */
     protected int $orderCategory;
 
-    public function __construct()
-    {
-        $this->setRequiredField('orderIds');
-    }
-
     /**
      * @param string $orderIds
      * @return BatchCancelOrderByIdRequest

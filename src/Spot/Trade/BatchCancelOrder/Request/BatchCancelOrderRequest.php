@@ -30,11 +30,6 @@ class BatchCancelOrderRequest extends AbstractParameters implements IBatchCancel
      */
     protected int $orderCategory;
 
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
-
     /**
      * @param string $symbol
      * @return BatchCancelOrderRequest

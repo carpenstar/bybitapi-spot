@@ -20,11 +20,6 @@ class PublicTradingRecordsRequest extends AbstractParameters implements IPublicT
      */
     protected int $limit = 60;
 
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
-
     /**
      * @param string $symbol
      * @return PublicTradingRecordsRequest

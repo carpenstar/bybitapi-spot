@@ -13,11 +13,6 @@ class BestBidAskPriceRequest extends AbstractParameters implements IBestBidAskPr
      */
     protected string $symbol;
 
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
-
     /**
      * @param string $symbol
      * @return BestBidAskPriceRequest

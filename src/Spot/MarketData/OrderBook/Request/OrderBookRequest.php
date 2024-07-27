@@ -20,11 +20,6 @@ class OrderBookRequest extends AbstractParameters implements IOrderBookRequestIn
      */
     protected int $limit = 100;
 
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
-
     /**
      * @return string
      */
