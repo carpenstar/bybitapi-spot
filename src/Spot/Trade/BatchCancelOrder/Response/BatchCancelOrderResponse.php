@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\Response;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractResponse;

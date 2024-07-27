@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Interfaces;
 
 interface IBatchCancelOrderByIdResponseItemInterface

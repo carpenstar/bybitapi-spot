@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Interfaces;
 
 interface IKlineResponseInterface

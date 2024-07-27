@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\OpenOrders\Tests;
 
 use Carpenstar\ByBitAPI\BybitAPI;

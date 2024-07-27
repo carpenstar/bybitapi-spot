@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\AllAssetInfo\Response;
 
 use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
@@ -9,7 +10,6 @@ use Carpenstar\ByBitAPI\Spot\LeverageToken\AllAssetInfo\Interfaces\IAllAssetInfo
 
 class AllAssetInfoResponse extends AbstractResponse implements IAllAssetInfoResponseInterface
 {
-
     /** @var IAllAssetInfoResponseItemInterface $list */
     private EntityCollection $list;
 

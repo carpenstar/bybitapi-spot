@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Redeem\Tests;
 
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
@@ -14,7 +15,8 @@ class ReedemTest extends TestCase
      */
     public function testBuildResponseData()
     {
-        $json = '{"retCode":0,"retMsg":"OK","result":{"id":"2087","ltCode":"DOT3LUSDT","orderAmount":"","orderQuantity":"50","orderStatus":"2","quantity":"","serialNo":"r001","timestamp":1662605726326,"valueCoin":"DOT3L"},"retExtInfo":{},"time":1662605727987}';;
+        $json = '{"retCode":0,"retMsg":"OK","result":{"id":"2087","ltCode":"DOT3LUSDT","orderAmount":"","orderQuantity":"50","orderStatus":"2","quantity":"","serialNo":"r001","timestamp":1662605726326,"valueCoin":"DOT3L"},"retExtInfo":{},"time":1662605727987}';
+        ;
         $data = (new CurlResponseHandler())->build(json_decode($json, true), ReedemResponse::class);
 
         $this->assertEquals(0, $data->getReturnCode());

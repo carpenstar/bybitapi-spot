@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;

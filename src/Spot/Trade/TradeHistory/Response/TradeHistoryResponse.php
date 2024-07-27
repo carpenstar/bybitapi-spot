@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\TradeHistory\Response;
 
 use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;

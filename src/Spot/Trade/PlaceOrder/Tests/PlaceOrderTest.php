@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Tests;
 
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -12,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 class PlaceOrderTest extends TestCase
 {
-    static private string $placeOrderResponse = '{"retCode":0,"retMsg":"OK","result":{"orderId":"1477137337600322304","orderLinkId":"64c7ef2bdf040","symbol":"BTCUSDT","createTime":"1690824492584","orderPrice":"1000","orderQty":"0.001","orderType":"LIMIT","side":"BUY","status":"NEW","timeInForce":"GTC","accountId":"1111837","execQty":"0","orderCategory":0,"smpType":"None"},"retExtInfo":{},"time":1690824492593}';
+    private static string $placeOrderResponse = '{"retCode":0,"retMsg":"OK","result":{"orderId":"1477137337600322304","orderLinkId":"64c7ef2bdf040","symbol":"BTCUSDT","createTime":"1690824492584","orderPrice":"1000","orderQty":"0.001","orderType":"LIMIT","side":"BUY","status":"NEW","timeInForce":"GTC","accountId":"1111837","execQty":"0","orderCategory":0,"smpType":"None"},"retExtInfo":{},"time":1690824492593}';
 
     /**
      * Тестирование размещения ордера по рынку на покупку
@@ -47,7 +48,7 @@ class PlaceOrderTest extends TestCase
         $this->assertEquals('GTC', $orderInfo->getTimeInForce());
         $this->assertNotEmpty($orderInfo->getAccountId());
         $this->assertEmpty($orderInfo->getTriggerPrice());
-   }
+    }
 
     /**
      * Тестирование размещения лимитного ордера на покупку

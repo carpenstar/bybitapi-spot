@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\MarketInfo\Response;
 
 use Carpenstar\ByBitAPI\Core\Helpers\DateTimeHelper;

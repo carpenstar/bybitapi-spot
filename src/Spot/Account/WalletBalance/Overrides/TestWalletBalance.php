@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Account\WalletBalance\Overrides;
 
 use Carpenstar\ByBitAPI\Core\Traits\OverrideExecuteTrait;

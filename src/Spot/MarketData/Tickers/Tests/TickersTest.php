@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\Tickers\Tests;
 
 use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;

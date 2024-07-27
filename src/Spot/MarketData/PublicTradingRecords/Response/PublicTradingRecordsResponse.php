@@ -1,6 +1,6 @@
 <?php
-namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Response;
 
+namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Response;
 
 use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
 use Carpenstar\ByBitAPI\Core\Objects\AbstractResponse;

@@ -1,10 +1,10 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\OrderHistory\Response;
 
 use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
 use Carpenstar\ByBitAPI\Core\Objects\AbstractResponse;
 use Carpenstar\ByBitAPI\Core\Objects\Collection\EntityCollection;
-
 
 class OrderHistoryResponse extends AbstractResponse
 {

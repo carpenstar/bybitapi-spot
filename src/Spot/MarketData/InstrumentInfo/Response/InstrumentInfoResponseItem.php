@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractResponse;

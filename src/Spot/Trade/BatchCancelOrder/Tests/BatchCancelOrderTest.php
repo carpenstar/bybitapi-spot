@@ -1,5 +1,7 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\Tests;
+
 use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
 use Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\BatchCancelOrder;
@@ -9,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 class BatchCancelOrderTest extends TestCase
 {
-
     public function testBuildResponseData()
     {
         $json = '{"retCode":0,"retMsg":"OK","result":{"success":"1"},"retExtInfo":{},"time":1718137773003}';

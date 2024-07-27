@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;

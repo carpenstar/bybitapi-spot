@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Tests;
 
 use Carpenstar\ByBitAPI\BybitAPI;
@@ -130,7 +131,7 @@ class BatchCancelOrderByIdTest extends TestCase
             $idsList[] = $orderInfo->getOrderId();
         }
 
-        $fakeId = rand(0,100);
+        $fakeId = rand(0, 100);
         $idsList[] = $fakeId;
 
         $params = (new BatchCancelOrderByIdRequest())->setOrderIds(implode(',', $idsList));

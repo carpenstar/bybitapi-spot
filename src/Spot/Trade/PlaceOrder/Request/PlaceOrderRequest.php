@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Request;
 
 use Carpenstar\ByBitAPI\Core\Enums\EnumOrderType;

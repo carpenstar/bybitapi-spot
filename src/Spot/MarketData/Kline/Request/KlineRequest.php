@@ -1,6 +1,6 @@
 <?php
-namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Request;
 
+namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Request;
 
 use Carpenstar\ByBitAPI\Core\Enums\EnumIntervals;
 use Carpenstar\ByBitAPI\Core\Helpers\StringHelper;

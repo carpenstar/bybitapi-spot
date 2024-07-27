@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Tests;
 
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;

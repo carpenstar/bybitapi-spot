@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\GetOrder\Response;
 
 use Carpenstar\ByBitAPI\Core\Helpers\DateTimeHelper;

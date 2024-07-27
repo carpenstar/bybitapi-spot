@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Redeem\Interfaces;
 
 interface IReedemRequestInterface
