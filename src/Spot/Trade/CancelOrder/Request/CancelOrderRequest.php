@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\CancelOrder\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;

@@ -1,6 +1,6 @@
 <?php
-namespace Carpenstar\ByBitAPI\Spot\Trade\OrderHistory\Tests;
 
+namespace Carpenstar\ByBitAPI\Spot\Trade\OrderHistory\Tests;
 
 use Carpenstar\ByBitAPI\BybitAPI;
 use Carpenstar\ByBitAPI\Core\Exceptions\SDKException;
@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 class OrderHistoryTest extends TestCase
 {
-    static private string $orderHistoryResponse = '{"retCode":0,"retMsg":"OK","result":{"list":[{"accountId":"533287","symbol":"BTCUSDT","orderLinkId":"spotx003","orderId":"1210856408331857664","orderPrice":"23800","orderQty":"0.02","execQty":"0","cummulativeQuoteQty":"0","avgPrice":"0","status":"REJECTED","timeInForce":"GTC","orderType":"LIMIT_MAKER","side":"BUY","stopPrice":"0.0","icebergQty":"0.0","createTime":1659081332185,"updateTime":1659081332225,"isWorking":"1","blockTradeId":"","cancelType":"UNKNOWN","smpGroup":0,"smpOrderId":"","smpType":"None"}]},"retExtInfo":{},"time":1659082630638}';
+    private static string $orderHistoryResponse = '{"retCode":0,"retMsg":"OK","result":{"list":[{"accountId":"533287","symbol":"BTCUSDT","orderLinkId":"spotx003","orderId":"1210856408331857664","orderPrice":"23800","orderQty":"0.02","execQty":"0","cummulativeQuoteQty":"0","avgPrice":"0","status":"REJECTED","timeInForce":"GTC","orderType":"LIMIT_MAKER","side":"BUY","stopPrice":"0.0","icebergQty":"0.0","createTime":1659081332185,"updateTime":1659081332225,"isWorking":"1","blockTradeId":"","cancelType":"UNKNOWN","smpGroup":0,"smpOrderId":"","smpType":"None"}]},"retExtInfo":{},"time":1659082630638}';
 
     /**
      * Тестирование заполнения структуры ответа

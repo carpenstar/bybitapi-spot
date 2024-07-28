@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -19,11 +20,6 @@ class PublicTradingRecordsRequest extends AbstractParameters implements IPublicT
      * @var int $limit
      */
     protected int $limit = 60;
-
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
 
     /**
      * @param string $symbol

@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\PlaceOrder\Request;
 
 use Carpenstar\ByBitAPI\Core\Enums\EnumOrderType;
@@ -74,15 +75,6 @@ class PlaceOrderRequest extends AbstractParameters implements IPlaceOrderRequest
      * @required false
      */
     protected float $triggerPrice;
-
-    public function __construct()
-    {
-        $this
-            ->setRequiredField('symbol')
-            ->setRequiredField('orderQty')
-            ->setRequiredField('side')
-            ->setRequiredField('orderType');
-    }
 
     /**
      * @param string $symbol

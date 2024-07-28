@@ -1,13 +1,19 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\OrderHistory;
 
 use Carpenstar\ByBitAPI\Core\Endpoints\PrivateEndpoint;
-use Carpenstar\ByBitAPI\Core\Interfaces\IGetEndpointInterface;
+use Carpenstar\ByBitAPI\Core\Enums\EnumHttpMethods;
 use Carpenstar\ByBitAPI\Spot\Trade\OrderHistory\Response\OrderHistoryResponse;
 use Carpenstar\ByBitAPI\Spot\Trade\OrderHistory\Request\OrderHistoryRequest;
 
-class OrderHistory extends PrivateEndpoint implements IGetEndpointInterface
+class OrderHistory extends PrivateEndpoint
 {
+    public function getEndpointRequestMethod(): string
+    {
+        return EnumHttpMethods::GET;
+    }
+
     protected function getEndpointUrl(): string
     {
         return "/spot/v3/private/history-orders";

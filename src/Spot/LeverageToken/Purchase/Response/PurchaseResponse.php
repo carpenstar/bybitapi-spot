@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Response;
 
 use Carpenstar\ByBitAPI\Core\Helpers\DateTimeHelper;

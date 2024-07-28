@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Account\WalletBalance\Response;
 
 use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
@@ -8,7 +9,6 @@ use Carpenstar\ByBitAPI\Spot\Account\WalletBalance\Interfaces\IWalletBalanceResp
 
 class WalletBalanceResponse extends AbstractResponse implements IWalletBalanceResponseInterfaces
 {
-
     /** @var WalletBalanceResponseItem[] $balance */
     private EntityCollection $balance;
 

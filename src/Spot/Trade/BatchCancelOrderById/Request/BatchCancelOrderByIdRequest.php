@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -17,11 +18,6 @@ class BatchCancelOrderByIdRequest extends AbstractParameters implements IBatchCa
      * @var int $orderCategory
      */
     protected int $orderCategory;
-
-    public function __construct()
-    {
-        $this->setRequiredField('orderIds');
-    }
 
     /**
      * @param string $orderIds

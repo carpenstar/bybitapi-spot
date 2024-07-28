@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Redeem\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -23,13 +24,6 @@ class ReedemRequest extends AbstractParameters implements IReedemRequestInterfac
      * @var string $serialNo
      */
     protected string $serialNo;
-
-    public function __construct()
-    {
-        $this
-            ->setRequiredField('ltCode')
-            ->setRequiredField('ltQuantity');
-    }
 
     /**
      * @return string

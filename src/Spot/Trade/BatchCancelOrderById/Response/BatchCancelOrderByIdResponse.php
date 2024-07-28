@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Response;
 
 use Carpenstar\ByBitAPI\Core\Builders\ResponseDtoBuilder;
@@ -12,7 +13,6 @@ use Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrderById\Interfaces\IBatchCancelO
  */
 class BatchCancelOrderByIdResponse extends AbstractResponse implements IBatchCancelOrderByIdResponseInterface
 {
-
     /** @var EntityCollection $list */
     private EntityCollection $list;
 

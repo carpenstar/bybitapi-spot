@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Tests;
 
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;
@@ -14,7 +15,8 @@ class BestBidAskPriceTest extends TestCase
      */
     public function testBuildResponseData()
     {
-        $json = '{"retCode":0,"retMsg":"OK","result":{"symbol":"BTCUSDT","bidPrice":"26298.69","bidQty":"0.106418","askPrice":"26298.7","askQty":"0.008773","time":1683979447464},"retExtInfo":{},"time":1683979447820}';;
+        $json = '{"retCode":0,"retMsg":"OK","result":{"symbol":"BTCUSDT","bidPrice":"26298.69","bidQty":"0.106418","askPrice":"26298.7","askQty":"0.008773","time":1683979447464},"retExtInfo":{},"time":1683979447820}';
+        ;
         $data = (new CurlResponseHandler())->build(json_decode($json, true), BestBidAskPriceResponse::class);
 
         $this->assertEquals(0, $data->getReturnCode());

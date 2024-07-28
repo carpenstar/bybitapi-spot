@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Account\WalletBalance\Tests;
 
 use Carpenstar\ByBitAPI\Core\Response\CurlResponseHandler;

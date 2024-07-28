@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -12,11 +13,6 @@ class BestBidAskPriceRequest extends AbstractParameters implements IBestBidAskPr
      * @var string $symbol
      */
     protected string $symbol;
-
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
 
     /**
      * @param string $symbol

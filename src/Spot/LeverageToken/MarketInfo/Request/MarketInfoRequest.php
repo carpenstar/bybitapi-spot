@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\MarketInfo\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -7,11 +8,6 @@ use Carpenstar\ByBitAPI\Spot\LeverageToken\MarketInfo\Interfaces\IMarketInfoRequ
 class MarketInfoRequest extends AbstractParameters implements IMarketInfoRequestInterface
 {
     protected string $ltCode;
-
-    public function __construct()
-    {
-        $this->setRequiredField("ltCode");
-    }
 
     public function setLtCode(string $ltCode): self
     {

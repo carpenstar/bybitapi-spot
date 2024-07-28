@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\LastTradedPrice\Response;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractResponse;

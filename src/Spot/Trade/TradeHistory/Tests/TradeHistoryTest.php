@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\TradeHistory\Tests;
 
 use Carpenstar\ByBitAPI\BybitAPI;

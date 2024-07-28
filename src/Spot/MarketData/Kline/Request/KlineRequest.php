@@ -1,6 +1,6 @@
 <?php
-namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Request;
 
+namespace Carpenstar\ByBitAPI\Spot\MarketData\Kline\Request;
 
 use Carpenstar\ByBitAPI\Core\Enums\EnumIntervals;
 use Carpenstar\ByBitAPI\Core\Helpers\StringHelper;
@@ -43,13 +43,6 @@ class KlineRequest extends AbstractParameters implements IKlineRequestInterface
      * @var int $endTime
      */
     protected int $endTime;
-
-    public function __construct()
-    {
-        $this
-            ->setRequiredField('symbol')
-            ->setRequiredField('interval');
-    }
 
     /**
      * @param string $symbol

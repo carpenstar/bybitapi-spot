@@ -1,8 +1,9 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo;
 
 use Carpenstar\ByBitAPI\Core\Endpoints\PublicEndpoint;
-use Carpenstar\ByBitAPI\Core\Interfaces\IGetEndpointInterface;
+use Carpenstar\ByBitAPI\Core\Enums\EnumHttpMethods;
 use Carpenstar\ByBitAPI\Core\Objects\StubQueryBag;
 use Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoResponseItem;
 
@@ -11,8 +12,13 @@ use Carpenstar\ByBitAPI\Spot\MarketData\InstrumentInfo\Response\InstrumentInfoRe
  *
  * https://bybit-exchange.github.io/docs/spot/public/instrument
  */
-class InstrumentInfo extends PublicEndpoint implements IGetEndpointInterface
+class InstrumentInfo extends PublicEndpoint
 {
+    public function getEndpointRequestMethod(): string
+    {
+        return EnumHttpMethods::GET;
+    }
+
     protected function getEndpointUrl(): string
     {
         return "/spot/v3/public/symbols";

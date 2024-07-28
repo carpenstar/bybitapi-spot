@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\Trade\BatchCancelOrder\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -29,11 +30,6 @@ class BatchCancelOrderRequest extends AbstractParameters implements IBatchCancel
      * @var int $orderCategory
      */
     protected int $orderCategory;
-
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
 
     /**
      * @param string $symbol

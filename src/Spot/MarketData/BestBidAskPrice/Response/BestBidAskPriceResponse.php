@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\BestBidAskPrice\Response;
 
 use Carpenstar\ByBitAPI\Core\Helpers\DateTimeHelper;

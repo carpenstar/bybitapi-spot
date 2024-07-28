@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\LeverageToken\Purchase\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -24,13 +25,6 @@ class PurchaseRequest extends AbstractParameters implements IPurchaseRequestInte
      * @var string $serialNo
      */
     protected string $serialNo;
-
-    public function __construct()
-    {
-        $this
-            ->setRequiredField('ltCode')
-            ->setRequiredField('ltAmount');
-    }
 
     /**
      * @return string

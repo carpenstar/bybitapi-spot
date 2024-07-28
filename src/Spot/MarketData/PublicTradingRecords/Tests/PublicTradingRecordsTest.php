@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\PublicTradingRecords\Tests;
 
 use Carpenstar\ByBitAPI\BybitAPI;

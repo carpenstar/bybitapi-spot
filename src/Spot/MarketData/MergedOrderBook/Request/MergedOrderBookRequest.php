@@ -1,4 +1,5 @@
 <?php
+
 namespace Carpenstar\ByBitAPI\Spot\MarketData\MergedOrderBook\Request;
 
 use Carpenstar\ByBitAPI\Core\Objects\AbstractParameters;
@@ -26,11 +27,6 @@ class MergedOrderBookRequest extends AbstractParameters implements IMergedOrderB
      * @var int $limit
      */
     protected int $limit = 100;
-
-    public function __construct()
-    {
-        $this->setRequiredField('symbol');
-    }
 
     /**
      * @return string
