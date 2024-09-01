@@ -3,8 +3,12 @@
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/carpenstar/bybitapi-sdk-spot/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 # ByBitAPI - spot-trading package
 
-**Дисклэймер: это неофициальный SDK для интеграции с биржей ByBit.   
-Поддержка функционала осуществляется только в пределах зоны отвественности кода и при возможности со стороны разработчика**
+> [!IMPORTANT]
+> Это неофициальный SDK для взаимодействия с биржей ByBit. Разработка ведется одним человеком исключительно на энтузиазме и по мере возможности  
+По всем вопросам вы можете связаться со мной в Issues, по email: mighty.vlad@gmail.com или в телеграм: @novisad0189
+
+> [!IMPORTANT]
+> Этот пакет является расширением [bybitapi-sdk-core](https://github.com/carpenstar/bybitapi-sdk-core) 
 
 ## Требования
 
@@ -13,7 +17,7 @@
 ## Установка
 
 ```sh 
-composer require carpenstar/bybitapi-sdk-spot
+composer require carpenstar/bybitapi-sdk-spot:3.*
 ```
 
 ## Содержание:
@@ -31,98 +35,98 @@ composer require carpenstar/bybitapi-sdk-spot
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---best-bid-ask-price">Best Bid Ask Price</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/BestBidAskPrice">Best Bid Ask Price</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/BestBidAskPrice">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/bid-ask" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/MarketData/BestBidAskPrice/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/MarketData/BestBidAskPrice/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---instrument-info">Instrument Info</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo">Instrument Info</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/instrument" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/InstrumentInfo/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---kline">Kline</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline">Kline</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/kline" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Kline/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---last-traded-price">Last Traded Price</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice">Last Traded Price</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/last-price" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/LastTradedPrice/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---merged-order-book">Merged Order Book</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook">Merged Order Book</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/merge-depth" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/MergedOrderBook/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---public-trading-records">Public Trading Records</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords">Public Trading Records</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/recent-trade" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/PublicTradingRecords/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---tickers">Tickers</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers">Tickers</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/tickers" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/Tickers/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#market-data---order-book">Order Book</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook">Order Book</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/public/depth" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/MarketData/OrderBook/README_ru.md">RU</a>
     </td>
   </tr>
 
@@ -137,79 +141,79 @@ composer require carpenstar/bybitapi-sdk-spot
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#trade---place-order">Place Order</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/PlaceOrder">Place Order</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/PlaceOrder">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/place-order" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/PlaceOrder/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/PlaceOrder/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#trade---get-order">Get Order</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/GetOrder">Get Order</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/GetOrder">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/get-order" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/GetOrder/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/GetOrder/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/carpenstar/bybitapi-sdk-spot#trade---cancel-order">Cancel Order</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/CancelOrder">Cancel Order</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/CancelOrder">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/cancel" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/CancelOrder/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/CancelOrder/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Batch Cancel Order</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrder">Batch Cancel Order</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrder">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/batch-cancel" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/BatchCancelOrder/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/BatchCancelOrder/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Batch Cancel Order By Id</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrderById">Batch Cancel Order By Id</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/BatchCancelOrderById">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/cancel-by-id" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/BatchCancelOrderById/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/BatchCancelOrderById/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Open Orders</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OpenOrders">Open Orders</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OpenOrders">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/open-order" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/OpenOrders/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/OpenOrders/README_ru.md">RU</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Order History</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OrderHistory">Order History</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/OrderHistory">перейти</a></td>
@@ -221,14 +225,14 @@ composer require carpenstar/bybitapi-sdk-spot
   </tr>
   <tr>
     <td>
-      <a href="">Trade History</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/TradeHistory">Trade History</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Trade/TradeHistory">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/trade/my-trades" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/OrderHistory/README.md">EN</a>,
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Trade/OrderHistory/README_ru.md">RU</a>
     </td>
   </tr>
 
@@ -243,62 +247,57 @@ composer require carpenstar/bybitapi-sdk-spot
   </tr>
   <tr>
     <td>
-      <a href="">All Asset Info</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/AllAssetInfo">All Asset Info</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/AllAssetInfo">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/asset-info" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/LeverageToken/AllAssetInfo/README.md">EN</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Market Info</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/MarketInfo">Market Info</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/MarketInfo">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/market-info" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/LeverageToken/MarketInfo/README.md">EN</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Purchase</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Purchase">Purchase</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Purchase">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/purchase" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/LeverageToken/Purchase/README.md">EN</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Purchase Redeem History</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/PurchaseRedeemHistory">Purchase Redeem History</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/PurchaseRedeemHistory">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/order-history" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/LeverageToken/PurchaseRedeemHistory/README.md">EN</a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="">Redeem</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Redeem">Redeem</a>
     </td>
     <td><b>publicEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/LeverageToken/Redeem">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/etp/redeem" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/LeverageToken/Redeem/README.md">EN</a>
     </td>
   </tr>
   <tr>
@@ -312,14 +311,13 @@ composer require carpenstar/bybitapi-sdk-spot
   </tr>
   <tr>
     <td>
-      <a href="">Wallet Balance</a>
+      <a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Account/WalletBalance">Wallet Balance</a>
     </td>
     <td><b>privateEndpoint</b></td>
     <td style="text-align: center"><a href="https://github.com/carpenstar/bybitapi-sdk-spot/tree/master/src/Spot/Account/WalletBalance">перейти</a></td>
     <td style="text-align: center"><a href="https://bybit-exchange.github.io/docs/spot/wallet" target="_blank">перейти</a></td>
     <td style="text-align: center">
-        <a href="">EN</a>,
-        <a href="">RU</a>
+        <a href="https://github.com/carpenstar/bybitapi-sdk-spot/blob/master/src/Spot/Account/WalletBalance/README.md">EN</a>
     </td>
   </tr>
 </table>
