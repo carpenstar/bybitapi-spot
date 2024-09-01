@@ -1,7 +1,21 @@
 <phpunit bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="spot">
-            <directory>src/</directory>
+        <testsuite name="spot-market-data">
+            <directory>src/Spot/MarketData/BestBidAskPrice/Tests/</directory>
+            <directory>src/Spot/MarketData/InstrumentInfo/Tests/</directory>
+            <directory>src/Spot/MarketData/Kline/Tests/</directory>
+            <directory>src/Spot/MarketData/LastTradedPrice/Tests/</directory>
+            <directory>src/Spot/MarketData/MergedOrderBook/Tests/</directory>
+            <directory>src/Spot/MarketData/OrderBook/Tests/</directory>
+            <directory>src/Spot/MarketData/PublicTradingRecords/Tests/</directory>
+            <directory>src/Spot/MarketData/Tickers/Tests/</directory>
+        </testsuite>
+        <testsuite name="spot-leverage-token">
+            <directory>src/Spot/LeverageToken/AllAssetInfo/Tests/</directory>
+            <directory>src/Spot/LeverageToken/MarketInfo/Tests/</directory>
+            <directory>src/Spot/LeverageToken/Purchase/Tests/</directory>
+            <directory>src/Spot/LeverageToken/PurchaseRedeemHistory/Tests/</directory>
+            <directory>src/Spot/LeverageToken/Redeem/Tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
